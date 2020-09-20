@@ -1,0 +1,12 @@
+@import "~scss/variables";
+
+.sw-cms-el-preview-rl-advanced-banner {
+    &.is--empty {
+        background: $color-shopware-brand-50;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

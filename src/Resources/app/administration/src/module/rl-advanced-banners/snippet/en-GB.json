@@ -1,0 +1,82 @@
+{
+    "rl-advanced-banners": {
+        "list": {
+            "textBannerOverview": "Advanced Banners",
+            "placeholderSearchBar": "Search",
+            "buttonCreateBanner": "Create",
+            "technicalName": "Technical Name"
+        },
+        "detail": {
+            "textHeadline": "New Advanced Banner",
+            "cardTitleBannerInfo": "Banner info",
+            "labelTechnicalName": "Technical Name",
+            "sidebar": {
+                "titleBannerSettings": "Settings",
+                "titleBannerBaseSettings": "Basic settings",
+                "titleBannerLayers": "Layers"
+            }
+        },
+        "layer": {
+            "modalTitle": {
+                "text": "Text layer settings",
+                "image": "Image layer settings"
+            },
+            "config": {
+                "basic-config": "Basic Config",
+                "technicalName": "Technical Name",
+                "cssClass": "CSS Class"
+            },
+            "position": {
+                "center": "Center",
+                "left": "Left",
+                "right": "Right",
+                "top": "Top",
+                "bottom": "Bottom"
+            },
+            "padding": {
+                "left": "Padding Left",
+                "right": "Padding Right",
+                "top": "Padding Top",
+                "bottom": "Padding Bottom"
+            },
+            "text": {
+                "text-config": "Text Config",
+                "content": "Content",
+                "alignX": "Text Align",
+                "alignY": "Text Align Vertical"
+            },
+            "image": {
+                "media-config": "Media Config",
+                "mediaLabel": "Media",
+                "mediaMode": "Image mode",
+                "backgroundMediaModeAuto": "Auto",
+                "backgroundMediaModeCover": "Cover",
+                "backgroundMediaModeContain": "Contain",
+                "mediaRepeat": "Repeat",
+                "mediaNoRepeat": "No repeat",
+                "positionX": "Position X",
+                "positionY": "Position Y",
+                "width": "Width",
+                "height": "Height"
+            }
+        }
+    },
+    "sw-cms": {
+        "blocks": {
+            "image": {
+                "rlAdvancedBanner": {
+                    "label": "Advanced Banner"
+                }
+            }
+        },
+        "elements": {
+            "rlAdvancedBanner": {
+                "label": "Advanced Banner",
+                "config": {
+                    "advancedBannerSelect": "Select Advanced Banner",
+                    "advancedBannerHeight": "Height"
+                }
+            }
+        }
+    }
+}

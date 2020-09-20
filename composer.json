@@ -1,0 +1,19 @@
+{
+    "name": "runelaenen/shopware6-advanced-banners",
+    "description": "Advanced Banners plugin",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "RuneLaenen\\AdvancedBanners\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "RuneLaenen\\AdvancedBanners\\RuneLaenenAdvancedBanners",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "label": {
+            "de-DE": "Advanced Banners plugin",
+            "en-GB": "Advanced Banners plugin"
+        }
+    }
+}

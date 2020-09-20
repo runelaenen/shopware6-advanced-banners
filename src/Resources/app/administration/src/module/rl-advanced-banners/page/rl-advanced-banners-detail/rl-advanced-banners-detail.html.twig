@@ -1,0 +1,58 @@
+{% block rl_advanced_banners_detail %}
+    <sw-page class="rl-advanced-banners-detail" :showSearchBar="false" :showSmartBar="false">
+        {% block rl_advanced_banners_detail_content %}
+            <div class="rl-advanced-banners-detail__content" slot="content">
+                <sw-cms-toolbar>
+                    {% block rl_advanced_banners_detail_toolbar_language_switch %}
+                        <sw-language-switch  slot="language-switch"
+                                             @on-change="onChangeLanguage"
+                                            :saveChangesFunction="saveOnLanguageChange"
+                                            :abortChangeFunction="abortOnLanguageChange">
+                        </sw-language-switch>
+                    {% endblock %}
+
+                    {% block rl_advanced_banners_detail_toolbar_title %}
+                        <div class="rl-advanced-banners-detail__banner-info" slot="title">
+                            {% block rl_advanced_banners_detail_toolbar_back_button %}
+                                <router-link :to="{ name: 'rl.advanced.banners.overview' }" class="rl-advanced-banners-detail__back-btn">
+                                    <sw-icon name="default-basic-x-line"></sw-icon>
+                                </router-link>
+                            {% endblock %}
+
+                            {% block rl_advanced_banners_detail_toolbar_page_name %}
+                                <h2 class="rl-advanced-banners-detail__banner-name">{{ placeholder(advancedBanner, 'technicalName') }}</h2>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+
+                    {% block rl_advanced_banners_detail_toolbar_actions %}
+                        <div class="rl-advanced-banners-detail__actions" slot="actions">
+
+                            {% block rl_advanced_banners_detail_toolbar_actions_save %}
+                                <sw-button-process
+                                    class="sw-property-detail__save-action"
+                                    :isLoading="isLoading"
+                                    :processSuccess="isSaveSuccessful"
+                                    :disabled="isLoading"
+                                    variant="primary"
+                                    @process-finish="saveFinish"
+                                    v-tooltip="tooltipSave"
+                                    @click.prevent="onSave">
+                                    {{ $tc('sw-property.detail.buttonSave') }}
+                                </sw-button-process>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+                </sw-cms-toolbar>
+
+                <div class="rl-advanced-banners-detail__stage-container">
+                    <div class="rl-advanced-banners-detail__stage">
+                        <rl-advanced-banners-detail-preview :advancedBanner="advancedBanner"></rl-advanced-banners-detail-preview>
+                    </div>
+
+                    <rl-advanced-banners-detail-sidebar :advancedBanner="advancedBanner"></rl-advanced-banners-detail-sidebar>
+                </div>
+            </div>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

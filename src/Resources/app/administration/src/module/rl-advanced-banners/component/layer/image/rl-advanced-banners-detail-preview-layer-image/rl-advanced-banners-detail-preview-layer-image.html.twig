@@ -1,0 +1,8 @@
+{% block rl_advanced_banners_detail_preview_layer_image %}
+    <div class="rl-advanced-banners-detail-preview-layer-image">
+        <sw-loader v-if="isLoading"></sw-loader>
+        <div v-else
+             :class="previewClasses"
+             :style='backgroundStyle'></div>
+    </div>
+{% endblock %}

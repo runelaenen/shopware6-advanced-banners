@@ -1,0 +1,12 @@
+{% block sw_cms_el_rl_advanced_banner %}
+    <rl-advanced-banners-detail-preview v-if="advancedBanner"
+                                        :isCmsPreview="true"
+                                        :style="previewStyle"
+                                        class="sw-cms-el-preview-rl-advanced-banner"
+                                        :advancedBanner="advancedBanner"></rl-advanced-banners-detail-preview>
+    <div v-else
+         :style="previewStyle"
+         class="sw-cms-el-preview-rl-advanced-banner is--empty">
+        No banner selected yet
+    </div>
+{% endblock %}

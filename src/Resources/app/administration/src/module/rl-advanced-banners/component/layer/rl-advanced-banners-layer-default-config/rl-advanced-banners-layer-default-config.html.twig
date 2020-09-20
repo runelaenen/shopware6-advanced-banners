@@ -1,0 +1,56 @@
+<div class="rl-advanced-banners-layer-default-config">
+    <sw-text-field :label="$tc('rl-advanced-banners.layer.config.technicalName')"
+                   v-model="config.technicalName"></sw-text-field>
+
+    <sw-text-field :label="$tc('rl-advanced-banners.layer.config.cssClass')"
+                   v-model="config.cssClass"></sw-text-field>
+
+    <sw-container columns="1fr 1fr" gap="0px 30px">
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.image.width')"
+                           v-model="config.width"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.image.height')"
+                           v-model="config.height"></sw-text-field>
+        </div>
+    </sw-container>
+
+    <sw-container columns="1fr 1fr 1fr 1fr" gap="0 30px">
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.position.top')"
+                             v-model="config.posTop"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.position.right')"
+                             v-model="config.posRight"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.position.bottom')"
+                             v-model="config.posBottom"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.position.left')"
+                             v-model="config.posLeft"></sw-text-field>
+        </div>
+    </sw-container>
+
+    <sw-container columns="1fr 1fr 1fr 1fr" gap="0 30px">
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.padding.top')"
+                           v-model="config.padTop"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.padding.right')"
+                           v-model="config.padRight"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.padding.bottom')"
+                           v-model="config.padBottom"></sw-text-field>
+        </div>
+        <div>
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.padding.left')"
+                           v-model="config.padLeft"></sw-text-field>
+        </div>
+    </sw-container>
+</div>

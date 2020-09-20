@@ -1,0 +1,8 @@
+{% block rl_advanced_banners_detail_preview_layer_text %}
+    <div class="rl-advanced-banners-detail-preview-layer-text">
+        <div :class="previewClasses"
+             :style='previewStyles'>
+            {{ layer.config.content }}
+        </div>
+    </div>
+{% endblock %}

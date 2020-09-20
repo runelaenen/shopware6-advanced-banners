@@ -1,0 +1,72 @@
+<div class="rl-advanced-banners-layer-config-image">
+    <sw-sidebar-collapse :expandOnLoading="true">
+        <container slot="header">
+            {{ $tc('rl-advanced-banners.layer.image.media-config') }}
+        </container>
+        <container slot="content">
+            <sw-media-compact-upload-v2
+                :source="media && media.id ? media : null"
+                :uploadTag="uploadTag"
+                :label="$tc('rl-advanced-banners.layer.image.mediaLabel')"
+                :allowMultiSelect="false"
+                @media-upload-remove-image="removeMedia"
+                @selection-change="onSetMedia">
+            </sw-media-compact-upload-v2>
+            <sw-upload-listener
+                :uploadTag="uploadTag"
+                autoUpload
+                @media-upload-finish="successfulUpload">
+            </sw-upload-listener>
+
+            <sw-container columns="1fr 1fr" gap="0px 30px">
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.image.mediaMode')"
+                                     v-model="config.mediaMode"
+                                     :disabled="!config.mediaId">
+                        <option value="auto">{{ $tc('rl-advanced-banners.layer.image.backgroundMediaModeAuto') }}</option>
+                        <option value="contain">{{ $tc('rl-advanced-banners.layer.image.backgroundMediaModeContain') }}</option>
+                        <option value="cover">{{ $tc('rl-advanced-banners.layer.image.backgroundMediaModeCover') }}</option>
+                    </sw-select-field>
+                </div>
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.image.mediaRepeat')"
+                                     v-model="config.mediaRepeat"
+                                     :disabled="!config.mediaId">
+                        <option value="no-repeat">{{ $tc('rl-advanced-banners.layer.image.mediaNoRepeat') }}</option>
+                        <option value="repeat">{{ $tc('rl-advanced-banners.layer.image.mediaRepeat') }}</option>
+                    </sw-select-field>
+                </div>
+            </sw-container>
+
+            <sw-container columns="1fr 1fr" gap="0px 30px">
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.image.positionX')"
+                                     v-model="config.mediaPositionX"
+                                     :disabled="!config.mediaId">
+                        <option value="left">{{ $tc('rl-advanced-banners.layer.position.left') }}</option>
+                        <option value="center">{{ $tc('rl-advanced-banners.layer.position.center') }}</option>
+                        <option value="right">{{ $tc('rl-advanced-banners.layer.position.right') }}</option>
+                    </sw-select-field>
+                </div>
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.image.positionY')"
+                                     v-model="config.mediaPositionY"
+                                     :disabled="!config.mediaId">
+                        <option value="top">{{ $tc('rl-advanced-banners.layer.position.top') }}</option>
+                        <option value="center">{{ $tc('rl-advanced-banners.layer.position.center') }}</option>
+                        <option value="bottom">{{ $tc('rl-advanced-banners.layer.position.bottom') }}</option>
+                    </sw-select-field>
+                </div>
+            </sw-container>
+        </container>
+    </sw-sidebar-collapse>
+
+    <sw-sidebar-collapse>
+        <container slot="header">
+            {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
+        </container>
+        <container slot="content">
+            <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
+        </container>
+    </sw-sidebar-collapse>
+</div>

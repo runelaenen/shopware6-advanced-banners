@@ -1,0 +1,9 @@
+{% set mediaCollection = searchMedia([layer.config.mediaId], context.context) %}
+{% set media = mediaCollection.get(layer.config.mediaId) %}
+<div class="rl-advanced-banner-image"
+    style="background-image: url('{{ media.url }}');
+        background-size: {{ layer.config.mediaMode }};
+        background-repeat: {{ layer.config.mediaRepeat }};
+        background-position: {{ layer.config.mediaPositionX }} {{ layer.config.mediaPositionY }};">
+
+</div>

@@ -1,0 +1,28 @@
+@import "~scss/variables";
+
+.rl-advanced-banners-detail-layer {
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: 28px 1fr 28px 28px;
+    border: 1px solid $color-gray-300;
+    margin: 7px;
+    padding: 7px;
+    cursor: grab;
+
+    &--position {
+        display: block;
+        margin: -7px 5px -7px -7px;
+        padding: 7px;
+        text-align: center;
+        background: $color-shopware-brand-50;
+        color: $color-shopware-blue;
+    }
+}
+
+.rl-advanced-banners-detail-layer__modal .sw-modal__body {
+    padding: 0;
+
+    .sw-collapse__content {
+        padding: 1rem;
+    }
+}

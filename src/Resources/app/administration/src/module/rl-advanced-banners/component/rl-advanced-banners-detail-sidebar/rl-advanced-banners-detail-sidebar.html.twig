@@ -1,0 +1,61 @@
+{% block rl_advanced_banners_sidebar_banner %}
+<sw-sidebar class="rl-advanced-banners-detail-sidebar">
+    {% block rl_advanced_banners_sidebar_banner_settings %}
+        <sw-sidebar-item icon="default-action-settings"
+                         :title="$tc('rl-advanced-banners.detail.sidebar.titleBannerSettings')"
+                         ref="bannerConfigSidebar">
+
+            {% block rl_advanced_banners_sidebar_banner_settings_content %}
+                <sw-sidebar-collapse :expandOnLoading="true">
+
+                    {% block rl_advanced_banners_sidebar_banner_settings_header %}
+                        <span slot="header">{{ $tc('rl-advanced-banners.detail.sidebar.titleBannerBaseSettings') }}</span>
+                    {% endblock %}
+
+                    {% block rl_advanced_banners_sidebar_banner_settings_form %}
+                        <div class="rl-advanced-banners-detail-sidebar__settings" slot="content">
+                            {% block rl_advanced_banners_sidebar_banner_settings_name_field %}
+                                <sw-field type="text"
+                                          :label="$tc('rl-advanced-banners.detail.labelTechnicalName')"
+                                          :placeholder="placeholder(advancedBanner, 'technicalName')"
+                                          v-model="advancedBanner.technicalName">
+                                </sw-field>
+                            {% endblock %}
+                        </div>
+                    {% endblock %}
+                </sw-sidebar-collapse>
+            {% endblock %}
+        </sw-sidebar-item>
+    {% endblock %}
+
+    {% block rl_advanced_banners_sidebar_banner_layers %}
+        <sw-sidebar-item icon="default-os-layers"
+                         :title="$tc('rl-advanced-banners.detail.sidebar.titleBannerLayers')"
+                         ref="bannerLayersSidebar">
+
+            <div class="rl-advanced-banners-detail-layers-actions">
+                <div class="rl-advanced-banners-detail-layers-action"
+                     @click="addTextLayer">
+                    Text layer
+                </div>
+                <div class="rl-advanced-banners-detail-layers-action"
+                     @click="addImageLayer">
+                    Image layer
+                </div>
+            </div>
+
+            {% block rl_advanced_banners_sidebar_banner_layers_content %}
+                <div class="rl-advanced-banners-detail-layers">
+                    <rl-advanced-banners-detail-layer
+                        :key="layer.id"
+                        v-for="layer in advancedBanner.data.layers"
+                        :layer="layer"
+                        v-draggable="{ dragGroup: 'banner-layer', data: layer, onDragEnter: onLayerDragSort }"
+                        v-droppable="{ dragGroup: 'banner-layer', data: layer }"
+                        @remove-layer="onLayerRemove(layer)"></rl-advanced-banners-detail-layer>
+                </div>
+            {% endblock %}
+        </sw-sidebar-item>
+    {% endblock %}
+</sw-sidebar>
+{% endblock %}

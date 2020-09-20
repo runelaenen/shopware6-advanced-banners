@@ -1,0 +1,33 @@
+{% block rl_advanced_banners_detail_layer %}
+    <div>
+        <div class="rl-advanced-banners-detail-layer">
+            <span class="rl-advanced-banners-detail-layer--position">
+                {{ layer.position }}
+            </span>
+
+            <span class="rl-advanced-banners-detail-layer--name" v-if="layer.config.technicalName.length === 0">
+                {{ layer.type }}
+            </span>
+            <span class="rl-advanced-banners-detail-layer--name" v-else>
+                {{ layer.config.technicalName }}
+            </span>
+
+            <div class="rl-advanced-banners-detail-layer--action-config"
+                 v-if="configExists"
+                 @click="onLayerConfig">
+                <sw-icon name="default-action-settings" size="16"></sw-icon>
+            </div><div v-else></div>
+
+            <div class="rl-advanced-banners-detail-layer--action-remove"
+                 @click="onLayerRemove">
+                <sw-icon name="default-action-trash" size="16"></sw-icon>
+            </div>
+        </div>
+        <sw-modal v-if="showLayerConfig"
+                  class="rl-advanced-banners-detail-layer__modal"
+                  :title="$tc('rl-advanced-banners.layer.modalTitle.' + layer.type)"
+                  @modal-close="onConfigModalClose">
+            <component :is="'rl-advanced-banners-layer-config-' + layer.type" :layer="layer"></component>
+        </sw-modal>
+    </div>
+{% endblock %}

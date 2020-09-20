@@ -1,0 +1,103 @@
+{% block rl_advanced_banners_overview %}
+    <sw-page class="rl-advanced-banners-overview">
+
+        {% block rl_advanced_banners_overview_search_bar %}
+            <template slot="search-bar">
+                <sw-search-bar
+                    initialSearchType="rl_ab_banner"
+                    :initialSearch="term"
+                    :placeholder="$tc('rl-advanced-banners.list.placeholderSearchBar')"
+                    @search="onSearch">
+                </sw-search-bar>
+            </template>
+        {% endblock %}
+
+        {% block rl_advanced_banners_overview_smart_bar_header %}
+            <template slot="smart-bar-header">
+
+                {% block rl_advanced_banners_overview_smart_bar_header_title %}
+                    <h2>
+
+                        {% block rl_advanced_banners_overview_smart_bar_header_title_text %}
+                            {{ $tc('rl-advanced-banners.list.textBannerOverview') }}
+                        {% endblock %}
+
+                        {% block rl_advanced_banners_overview_smart_bar_header_amount %}
+                            <span v-if="!isLoading" class="sw-page__smart-bar-amount">
+                                ({{ items.total }})
+                            </span>
+                        {% endblock %}
+                    </h2>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block rl_advanced_banners_overview_smart_bar_actions %}
+            <template slot="smart-bar-actions">
+
+                {% block sw_property_list_add_button %}
+                    <sw-button
+                        class="rl-advanced-banners-overview__button-create"
+                        :routerLink="{ name: 'rl.advanced.banners.create' }"
+                        variant="primary"
+                        v-tooltip="{
+                            message: $tc('rl-advanced-banners.tooltip.warning'),
+                            showOnDisabledElements: true
+                        }">
+                        {{ $tc('rl-advanced-banners.list.buttonCreateBanner') }}
+                    </sw-button>
+                {% endblock %}
+
+            </template>
+        {% endblock %}
+
+        {% block rl_advanced_banners_overview_content %}
+            <template slot="content">
+
+                {% block rl_advanced_banners_overview_content_list %}
+                    <sw-entity-listing
+                        v-if="items"
+                        ref="listing"
+                        detailRoute="sw.review.detail"
+                        :repository="repository"
+                        :columns="columns"
+                        :items="items">
+
+                        {% block rl_advanced_banners_overview_content_list_technical_name %}
+                            <template #column-technical-name="{ item }">
+                                <div class="rl-advanced-banners-overview-text_ellipsis">
+                                    <router-link :to="{ name: 'sw.review.detail', params: { id: item.id } }">
+                                        {{ item.technicalName }}
+                                    </router-link>
+                                </div>
+                            </template>
+                        {% endblock %}
+                    </sw-entity-listing>
+                {% endblock %}
+
+                {% block rl_advanced_banners_overview_empty_state %}
+                    <sw-empty-state v-if="!isLoading && !total"
+                                    icon="default-documentation-file"
+                                    :title="$tc('rl-advanced-banners.list.messageEmpty')"
+                                    :subline="$tc('rl-advanced-banners.list.messageEmptySubline')">
+                    </sw-empty-state>
+                {% endblock %}
+            </template>
+        {% endblock %}
+
+        {% block rl_advanced_banners_overview_sidebar %}
+            <template slot="sidebar">
+                <sw-sidebar>
+
+                    {% block rl_advanced_banners_overview_sidebar_refresh %}
+                        <sw-sidebar-item
+                            icon="default-arrow-360-left"
+                            :title="$tc('rl-advanced-banners.list.titleSidebarItemRefresh')"
+                            @click="onRefresh">
+                        </sw-sidebar-item>
+                    {% endblock %}
+                </sw-sidebar>
+            </template>
+        {% endblock %}
+    </sw-page>
+{% endblock %}

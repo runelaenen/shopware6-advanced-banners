@@ -1,0 +1,6 @@
+<div class="rl-advanced-banners-detail-preview" :class="(isCmsPreview ? 'is--cms-preview' : '')">
+    <component :is="'rl-advanced-banners-detail-preview-layer-' + layer.type"
+               v-for="layer in advancedBanner.data.layers"
+               :key="layer.id"
+               :layer="layer"></component>
+</div>

@@ -1,0 +1,23 @@
+@import "~scss/variables";
+
+.rl-advanced-banners-detail-preview {
+    position: relative;
+    resize: both;
+    overflow: hidden;
+
+    height: 300px;
+    width: 800px;
+
+    max-height: 100%;
+    max-width: 100%;
+
+    border: 20px solid $color-gray-100;
+
+    &.is--cms-preview {
+        border: 0;
+        resize: none;
+
+        height: 100%;
+        width: 100%;
+    }
+}
