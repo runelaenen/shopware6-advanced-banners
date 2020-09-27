@@ -12,5 +12,9 @@
         <service id="RuneLaenen\AdvancedBanners\Custom\Banner\Cms\AdvancedBannerCmsElementResolver">
             <tag name="shopware.cms.data_resolver" />
         </service>
+
+        <service id="RuneLaenen\AdvancedBanners\Custom\Banner\Cms\AdvancedBannerSliderCmsElementResolver">
+            <tag name="shopware.cms.data_resolver" />
+        </service>
     </services>
 </container>

@@ -1,0 +1,67 @@
+{% block element_rl_advanced_banner_slider %}
+    {%  set sliderConfig = element.fieldConfig.elements %}
+    <div class="cms-element-rl-advanced-banner-slider">
+        {% set baseSliderOptions = {
+            slider: {
+                navPosition: 'bottom',
+                speed: 500,
+                nav: true,
+                controls: true,
+                autoHeight: false
+            }
+        } %}
+
+        {% block element_rl_advanced_banner_slider_alignment %}
+            <div class="base-slider image-slider"
+                 data-base-slider="true"
+                 data-base-slider-options='{{ baseSliderOptions|json_encode }}'>
+
+                {% block element_rl_advanced_banner_slider_inner %}
+                    <div class="image-slider-container"
+                         data-base-slider-container="true">
+
+                        {% for slide in element.data %}
+                            <div class="rl-advanced-banner image-slider-item" style="height: {{ element.config.height.value }};">
+                                {% for layer in slide.data.layers|sort((a, b) => a.position <=> b.position) %}
+                                    <div class="rl-advanced-banner-layer {{ cssClass }}" style="
+                                        position: absolute;
+                                        width: {{ layer.config.width }};
+                                        height: {{ element.config.height.value }};
+                                        top: {{ layer.config.posTop }};
+                                        right: {{ layer.config.posRight }};
+                                        bottom: {{ layer.config.posBottom }};
+                                        left: {{ layer.config.posLeft }};
+                                        padding: {{ layer.config.padTop }} {{ layer.config.padRight }} {{ layer.config.padBottom }} {{ layer.config.padLeft }}">
+                                        {% sw_include "@Storefront/storefront/banner-layer/rl-advanced-banner-layer-" ~ layer.type ~ ".html.twig" ignore missing %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    {% block element_rl_advanced_banner_slider_controls %}
+                        <div class="image-slider-controls-container">
+                            <div class="base-slider-controls"
+                                 data-base-slider-controls="true">
+                                {% block element_rl_advanced_banner_slider_controls_items %}
+                                    {% block element_rl_advanced_banner_slider_controls_items_arrows %}
+                                        <button class="base-slider-controls-prev image-slider-controls-prev{% if sliderConfig.navigationArrows.value == "outside" %} is-nav-prev-outside{% elseif sliderConfig.navigationArrows.value == "inside" %} is-nav-prev-inside{% endif %}">
+                                            {% block element_rl_advanced_banner_slider_controls_items_prev_icon %}
+                                                {% sw_icon 'arrow-head-left' %}
+                                            {% endblock %}
+                                        </button>
+                                        <button class="base-slider-controls-next image-slider-controls-next{% if sliderConfig.navigationArrows.value == "outside" %} is-nav-next-outside{% elseif sliderConfig.navigationArrows.value == "inside" %} is-nav-next-inside{% endif %}">
+                                            {% block element_rl_advanced_banner_slider_controls_items_next_icon %}
+                                                {% sw_icon 'arrow-head-right' %}
+                                            {% endblock %}
+                                        </button>
+                                    {% endblock %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                    {% endblock %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
