@@ -71,6 +71,21 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 })
             });
         },
+        addButtonLayer() {
+            this.advancedBanner.data.layers.push({
+                id: utils.createId(),
+                type: 'button',
+                position: this.newMaxPosition,
+                config: Object.assign(this.defaultConfig, {
+                    buttonVariant: 'primary',
+                    content: 'Click me!',
+                    buttonLink: '',
+                    buttonTarget: '_self',
+                    buttonAlignX: 'left',
+                    buttonAlignY: 'top'
+                })
+            });
+        },
         onLayerRemove(layer) {
             let data = this.advancedBanner.data.layers;
 

@@ -1,0 +1,59 @@
+<div class="rl-advanced-banners-layer-config-button">
+    <sw-sidebar-collapse :expandOnLoading="true">
+        <container slot="header">
+            {{ $tc('rl-advanced-banners.layer.button.button-config') }}
+        </container>
+        <container slot="content">
+            <sw-text-field :label="$tc('rl-advanced-banners.layer.button.content')"
+                           v-model="config.content"></sw-text-field>
+
+            <sw-container columns="5fr 1fr" gap="0px 30px">
+                <div>
+                    <sw-text-field :label="$tc('rl-advanced-banners.layer.button.link')"
+                                   v-model="config.buttonLink"></sw-text-field>
+                </div>
+                <div>
+                    <sw-field v-model="config.buttonTarget"
+                              :options="buttonTargetList"
+                              type="select"
+                              :label="$tc('rl-advanced-banners.layer.button.target')">
+                    </sw-field>
+                </div>
+            </sw-container>
+
+            <sw-field v-model="config.buttonVariant"
+                      :options="buttonVariantList"
+                      type="select"
+                      :label="$tc('rl-advanced-banners.layer.button.variant')">
+            </sw-field>
+
+            <sw-container columns="1fr 1fr" gap="0px 30px">
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.button.alignX')"
+                                     v-model="config.buttonAlignX">
+                        <option value="left">{{ $tc('rl-advanced-banners.layer.position.left') }}</option>
+                        <option value="center">{{ $tc('rl-advanced-banners.layer.position.center') }}</option>
+                        <option value="right">{{ $tc('rl-advanced-banners.layer.position.right') }}</option>
+                    </sw-select-field>
+                </div>
+                <div>
+                    <sw-select-field :label="$tc('rl-advanced-banners.layer.button.alignY')"
+                                     v-model="config.buttonAlignY">
+                        <option value="top">{{ $tc('rl-advanced-banners.layer.position.top') }}</option>
+                        <option value="center">{{ $tc('rl-advanced-banners.layer.position.center') }}</option>
+                        <option value="bottom">{{ $tc('rl-advanced-banners.layer.position.bottom') }}</option>
+                    </sw-select-field>
+                </div>
+            </sw-container>
+        </container>
+    </sw-sidebar-collapse>
+
+    <sw-sidebar-collapse>
+        <container slot="header">
+            {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
+        </container>
+        <container slot="content">
+            <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
+        </container>
+    </sw-sidebar-collapse>
+</div>

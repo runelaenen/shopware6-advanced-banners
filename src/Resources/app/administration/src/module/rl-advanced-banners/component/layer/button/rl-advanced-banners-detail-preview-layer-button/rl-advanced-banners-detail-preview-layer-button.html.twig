@@ -1,0 +1,10 @@
+{% block rl_advanced_banners_detail_preview_layer_button %}
+    <div class="rl-advanced-banners-detail-preview-layer-button">
+        <div :class="previewClasses"
+             :style='previewStyles'>
+            <sw-button :variant="layer.config.buttonVariant">
+                {{ layer.config.content }}
+            </sw-button>
+        </div>
+    </div>
+{% endblock %}
