@@ -1,0 +1,17 @@
+{% block sw_cms_el_config_rl_advanced_banner %}
+    <div class="sw-cms-el-config-rl-advanced-banner">
+        <sw-entity-multi-select
+            :label="$tc('sw-cms.elements.rlAdvancedBannerSlider.config.advancedBannerSelect')"
+            class="sw-cms-el-config-rl-advanced-banner__select"
+            entity="rl_ab_banner"
+            required
+            labelProperty="technicalName"
+            :entityCollection="advancedBanners"
+            @change="onSelectionChange">
+        </sw-entity-multi-select>
+
+
+        <sw-text-field :label="$tc('sw-cms.elements.rlAdvancedBannerSlider.config.advancedBannerHeight')"
+                       v-model="element.config.height.value"></sw-text-field>
+    </div>
+{% endblock %}

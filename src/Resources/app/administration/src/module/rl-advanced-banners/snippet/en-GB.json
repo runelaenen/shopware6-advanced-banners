@@ -66,6 +66,9 @@
             "image": {
                 "rlAdvancedBanner": {
                     "label": "Advanced Banner"
+                },
+                "rlAdvancedBannerSlider": {
+                    "label": "Advanced Banner Slider"
                 }
             }
         },
@@ -74,6 +77,13 @@
                 "label": "Advanced Banner",
                 "config": {
                     "advancedBannerSelect": "Select Advanced Banner",
+                    "advancedBannerHeight": "Height"
+                }
+            },
+            "rlAdvancedBannerSlider": {
+                "label": "Advanced Banner Slider",
+                "config": {
+                    "advancedBannerSelect": "Select Advanced Banners",
                     "advancedBannerHeight": "Height"
                 }
             }
