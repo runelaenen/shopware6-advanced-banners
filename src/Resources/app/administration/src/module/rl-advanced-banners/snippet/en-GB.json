@@ -4,7 +4,12 @@
             "textBannerOverview": "Advanced Banners",
             "placeholderSearchBar": "Search",
             "buttonCreateBanner": "Create",
-            "technicalName": "Technical Name"
+            "technicalName": "Technical Name",
+            "createModalTitle": "Create Advanced Banner",
+            "createBannerTitleLabel": "Advanced Banner Title"
+        },
+        "tooltip": {
+            "warning": "Create Advanced Banner"
         },
         "detail": {
             "textHeadline": "New Advanced Banner",
