@@ -1,0 +1,25 @@
+{% block sw_cms_el_rl_advanced_banner_slider %}
+    <div v-if="hasBanners" class="sw-cms-el-preview-rl-advanced-banner-slider-container">
+        <sw-icon @click="this.activateBannerItem -= 1"
+                 class="sw-cms-el-preview-rl-advanced-banner-slider__navigation-button"
+                 name="default-arrow-head-left"
+                 size="24">
+        </sw-icon>
+        <sw-icon @click="this.activateBannerItem += 1"
+                 class="sw-cms-el-preview-rl-advanced-banner-slider__navigation-button"
+                 name="default-arrow-head-right"
+                 size="24">
+        </sw-icon>
+
+        <rl-advanced-banners-detail-preview v-if="activeBanner"
+                                            :isCmsPreview="true"
+                                            :style="previewStyle"
+                                            class="sw-cms-el-preview-rl-advanced-banner-slider"
+                                            :advancedBanner="activeBanner"></rl-advanced-banners-detail-preview>
+    </div>
+    <div v-else
+         :style="previewStyle"
+         class="sw-cms-el-preview-rl-advanced-banner-slider is--empty">
+        No banners selected yet
+    </div>
+{% endblock %}
