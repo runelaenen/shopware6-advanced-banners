@@ -19,7 +19,8 @@
         "layer": {
             "modalTitle": {
                 "text": "Text layer settings",
-                "image": "Image layer settings"
+                "image": "Image layer settings",
+                "button": "Button layer settings"
             },
             "config": {
                 "basic-config": "Basic Config",
@@ -44,6 +45,19 @@
                 "content": "Content",
                 "alignX": "Text Align",
                 "alignY": "Text Align Vertical"
+            },
+            "button": {
+                "button-config": "Button Config",
+                "content": "Content",
+                "link": "Link to",
+                "target": "Target",
+                "variant": "Button Variant",
+                "alignX": "Button Align",
+                "alignY": "Button Align Vertical",
+                "buttonTargetList": {
+                    "self": "Same tab",
+                    "blank": "New tab"
+                }
             },
             "image": {
                 "media-config": "Media Config",

@@ -1,0 +1,25 @@
+.rl-advanced-banner-button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    &.button-align-x-left {
+        justify-content: flex-start;
+    }
+    &.button-align-x-center {
+        justify-content: center;
+    }
+    &.button-align-x-right {
+        justify-content: flex-end;
+    }
+
+    &.button-align-y-top {
+        align-items: flex-start;
+    }
+    &.button-align-y-center {
+        align-items: center;
+    }
+    &.button-align-y-bottom {
+        align-items: flex-end;
+    }
+}

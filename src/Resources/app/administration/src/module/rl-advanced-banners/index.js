@@ -7,6 +7,9 @@ import './component/layer/rl-advanced-banners-layer-default-config';
 import './component/layer/text/rl-advanced-banners-layer-config-text';
 import './component/layer/text/rl-advanced-banners-detail-preview-layer-text';
 
+import './component/layer/button/rl-advanced-banners-layer-config-button';
+import './component/layer/button/rl-advanced-banners-detail-preview-layer-button';
+
 import './component/layer/image/rl-advanced-banners-layer-config-image';
 import './component/layer/image/rl-advanced-banners-detail-preview-layer-image';
 
