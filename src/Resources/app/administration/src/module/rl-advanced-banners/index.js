@@ -13,7 +13,6 @@ import './component/layer/button/rl-advanced-banners-detail-preview-layer-button
 import './component/layer/image/rl-advanced-banners-layer-config-image';
 import './component/layer/image/rl-advanced-banners-detail-preview-layer-image';
 
-import './page/rl-advanced-banners-create';
 import './page/rl-advanced-banners-detail';
 import './page/rl-advanced-banners-overview';
 
@@ -28,10 +27,6 @@ Shopware.Module.register('rl-advanced-banners', {
         overview: {
             component: 'rl-advanced-banners-overview',
             path: 'overview'
-        },
-        create: {
-            component: 'rl-advanced-banners-create',
-            path: 'create'
         },
         detail: {
             component: 'rl-advanced-banners-detail',

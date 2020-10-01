@@ -38,7 +38,7 @@
                 {% block sw_property_list_add_button %}
                     <sw-button
                         class="rl-advanced-banners-overview__button-create"
-                        :routerLink="{ name: 'rl.advanced.banners.create' }"
+                        @click="showCreateModal = true"
                         variant="primary"
                         v-tooltip="{
                             message: $tc('rl-advanced-banners.tooltip.warning'),
@@ -58,7 +58,7 @@
                     <sw-entity-listing
                         v-if="items"
                         ref="listing"
-                        detailRoute="sw.review.detail"
+                        detailRoute="rl.advanced.banners.detail"
                         :repository="repository"
                         :columns="columns"
                         :items="items">
@@ -66,7 +66,7 @@
                         {% block rl_advanced_banners_overview_content_list_technical_name %}
                             <template #column-technical-name="{ item }">
                                 <div class="rl-advanced-banners-overview-text_ellipsis">
-                                    <router-link :to="{ name: 'sw.review.detail', params: { id: item.id } }">
+                                    <router-link :to="{ name: 'rl.advanced.banners.detail', params: { id: item.id } }">
                                         {{ item.technicalName }}
                                     </router-link>
                                 </div>
@@ -81,6 +81,22 @@
                                     :title="$tc('rl-advanced-banners.list.messageEmpty')"
                                     :subline="$tc('rl-advanced-banners.list.messageEmptySubline')">
                     </sw-empty-state>
+                {% endblock %}
+
+                {% block rl_advanced_banners_overview_content_modal_create %}
+                    <sw-modal v-if="showCreateModal"
+                              @modal-close="showCreateModal = false"
+                              :isLoading="createModalLoading"
+                              :title="$tc('rl-advanced-banners.list.createModalTitle')">
+                        <sw-text-field v-model="createBannerTitle"
+                                       :label="$tc('rl-advanced-banners.list.createBannerTitleLabel')"></sw-text-field>
+
+                        <template slot="modal-footer">
+                            <sw-button @click="createNewBanner" variant="primary">
+                                {{ $tc('rl-advanced-banners.list.buttonCreateBanner') }}
+                            </sw-button>
+                        </template>
+                    </sw-modal>
                 {% endblock %}
             </template>
         {% endblock %}

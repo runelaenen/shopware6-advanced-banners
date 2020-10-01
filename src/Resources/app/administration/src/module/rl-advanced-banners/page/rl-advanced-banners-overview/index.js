@@ -14,7 +14,10 @@ Shopware.Component.register('rl-advanced-banners-overview', {
             criteria: null,
             repository: null,
             items: null,
-            term: this.$route.query ? this.$route.query.term : null
+            term: this.$route.query ? this.$route.query.term : null,
+            showCreateModal: false,
+            createModalLoading: false,
+            createBannerTitle: ""
         };
     },
 
@@ -84,6 +87,25 @@ Shopware.Component.register('rl-advanced-banners-overview', {
 
         onRefresh() {
             this.getList();
+        },
+
+        createNewBanner() {
+            this.createModalLoading = true;
+
+            let banner = this.repository.create();
+            banner.technicalName = this.createBannerTitle;
+
+            return this.repository.save(banner, Shopware.Context.api).then((result) => {
+                this.showCreateModal = false;
+                this.$nextTick(function () {
+                    this.$router.push({
+                        name: 'rl.advanced.banners.detail',
+                        params: {
+                            id: banner.id
+                        }
+                    });
+                });
+            });
         }
     }
 });
