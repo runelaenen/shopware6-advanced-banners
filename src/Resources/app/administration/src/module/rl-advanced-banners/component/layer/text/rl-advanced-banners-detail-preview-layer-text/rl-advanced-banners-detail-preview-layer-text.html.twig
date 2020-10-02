@@ -2,7 +2,7 @@
     <div class="rl-advanced-banners-detail-preview-layer-text">
         <div :class="previewClasses"
              :style='previewStyles'>
-            {{ layer.config.content }}
+            <div v-html="$sanitize(layer.config.content)"></div>
         </div>
     </div>
 {% endblock %}

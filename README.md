@@ -12,9 +12,9 @@ Create layered, responsive banners & slideshows like you could do with Shopware 
 ## Features
  - Banner editor
  - Layered banners
- - Image, text, wysiwyg* and button* layers
+ - Image, text, wysiwyg and button layers
  - Easily extendible *
  - 'Advanced Banner' CMS element
- - 'Advanced Banner Slider' CMS element *
+ - 'Advanced Banner Slider' CMS element
  
 \* Not yet implemented or needs refactor
