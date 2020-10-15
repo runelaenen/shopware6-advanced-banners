@@ -1,6 +1,6 @@
 {
     "name": "runelaenen/shopware6-advanced-banners",
-    "description": "Advanced Banners plugin",
+    "description": "Advanced Banners (Digital Publishing) plugin",
     "type": "shopware-platform-plugin",
     "license": "MIT",
     "autoload": {
