@@ -12,8 +12,8 @@
         "shopware-plugin-class": "RuneLaenen\\AdvancedBanners\\RuneLaenenAdvancedBanners",
         "plugin-icon": "src/Resources/config/plugin.png",
         "label": {
-            "de-DE": "Advanced Banners plugin",
-            "en-GB": "Advanced Banners plugin"
+            "de-DE": "Advanced Banners (Digital Publishing) plugin",
+            "en-GB": "Advanced Banners (Digital Publishing) plugin"
         }
     }
 }

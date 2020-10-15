@@ -1,5 +1,4 @@
 # Advanced Banners (Digital Publishing) for Shopware 6
-## Work in progress! Do not use on live shops yet
 
 [![Latest Stable Version](https://poser.pugx.org/runelaenen/shopware6-advanced-banners/v)](//packagist.org/packages/runelaenen/shopware6-advanced-banners)
 [![Total Downloads](https://poser.pugx.org/runelaenen/shopware6-advanced-banners/downloads)](//packagist.org/packages/runelaenen/shopware6-advanced-banners)
@@ -12,9 +11,8 @@ Create layered, responsive banners & slideshows like you could do with Shopware 
 ## Features
  - Banner editor
  - Layered banners
- - Image, text, wysiwyg* and button* layers
- - Easily extendible *
+ - Image, text, wysiwyg layers
+ - Easily extendible
  - 'Advanced Banner' CMS element
- - 'Advanced Banner Slider' CMS element *
- 
-\* Not yet implemented or needs refactor
+ - 'Advanced Banner Slider' CMS element
+
