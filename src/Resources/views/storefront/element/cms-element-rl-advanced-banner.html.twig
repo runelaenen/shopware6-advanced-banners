@@ -1,6 +1,10 @@
 <div class="rl-advanced-banner"
      style="height: {{ element.config.height.value }};">
     {% for layer in element.data.data.layers|sort((a, b) => a.position <=> b.position) %}
+        {% if layer.config.inContainer %}
+            <div class="container rl-advanced-banner-container">
+        {% endif %}
+
         <div class="rl-advanced-banner-layer {{ cssClass }}" style="
             position: absolute;
             width: {{ layer.config.width }};
@@ -12,5 +16,9 @@
             padding: {{ layer.config.padTop }} {{ layer.config.padRight }} {{ layer.config.padBottom }} {{ layer.config.padLeft }}">
             {% sw_include "@Storefront/storefront/banner-layer/rl-advanced-banner-layer-" ~ layer.type ~ ".html.twig" ignore missing %}
         </div>
+
+        {% if layer.config.inContainer %}
+            </div>
+        {% endif %}
     {% endfor %}
 </div>

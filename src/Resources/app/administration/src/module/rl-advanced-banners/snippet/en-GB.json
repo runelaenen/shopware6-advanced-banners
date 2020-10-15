@@ -76,7 +76,8 @@
                 "positionX": "Position X",
                 "positionY": "Position Y",
                 "width": "Width",
-                "height": "Height"
+                "height": "Height",
+                "inContainer": "In Container"
             }
         }
     },

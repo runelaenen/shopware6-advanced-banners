@@ -5,7 +5,7 @@
     <sw-text-field :label="$tc('rl-advanced-banners.layer.config.cssClass')"
                    v-model="config.cssClass"></sw-text-field>
 
-    <sw-container columns="1fr 1fr" gap="0px 30px">
+    <sw-container columns="1fr 1fr 1fr" gap="0px 30px">
         <div>
             <sw-text-field :label="$tc('rl-advanced-banners.layer.image.width')"
                            v-model="config.width"></sw-text-field>
@@ -13,6 +13,10 @@
         <div>
             <sw-text-field :label="$tc('rl-advanced-banners.layer.image.height')"
                            v-model="config.height"></sw-text-field>
+        </div>
+        <div>
+            <sw-switch-field :label="$tc('rl-advanced-banners.layer.image.inContainer')"
+                             v-model="config.inContainer"></sw-switch-field>
         </div>
     </sw-container>
 
