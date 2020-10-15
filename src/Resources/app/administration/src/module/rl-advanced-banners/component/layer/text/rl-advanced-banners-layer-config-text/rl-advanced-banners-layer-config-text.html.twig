@@ -4,8 +4,8 @@
             {{ $tc('rl-advanced-banners.layer.text.text-config') }}
         </container>
         <container slot="content">
-            <sw-text-field :label="$tc('rl-advanced-banners.layer.text.content')"
-                           v-model="config.content"></sw-text-field>
+            <sw-text-editor :label="$tc('rl-advanced-banners.layer.text.content')"
+                           v-model="config.content"></sw-text-editor>
 
             <sw-container columns="1fr 1fr" gap="0px 30px">
                 <div>

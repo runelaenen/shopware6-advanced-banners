@@ -15,4 +15,3 @@ Create layered, responsive banners & slideshows like you could do with Shopware 
  - Easily extendible
  - 'Advanced Banner' CMS element
  - 'Advanced Banner Slider' CMS element
-
