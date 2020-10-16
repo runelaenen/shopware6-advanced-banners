@@ -1,1 +1,9 @@
-{% sw_extends '@Storefront/storefront/block/cms-block-image-text.html.twig' %}
+{% block block_rl_advanced_banner_slider %}
+    {% set id = element.id %}
+
+    {% set element = block.slots.getSlot('banner') %}
+
+    <div class="col-12" data-cms-element-id="{{ element.id  }}">
+        {% sw_include "@Storefront/storefront/element/cms-element-" ~ element.type ~ ".html.twig" ignore missing %}
+    </div>
+{% endblock %}

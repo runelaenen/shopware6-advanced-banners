@@ -1,24 +1,28 @@
-<div class="rl-advanced-banner"
-     style="height: {{ element.config.height.value }};">
-    {% for layer in element.data.data.layers|sort((a, b) => a.position <=> b.position) %}
-        {% if layer.config.inContainer %}
-            <div class="container rl-advanced-banner-container">
-        {% endif %}
+{% block rl_advanced_banner_element %}
+    <div class="rl-advanced-banner"
+         style="height: {{ element.config.height.value }};">
+        {% for layer in element.data.data.layers|sort((a, b) => a.position <=> b.position) %}
+            {% if layer.config.inContainer %}
+                <div class="rl-advanced-banner-container-wrapper">
+                    <div class="container rl-advanced-banner-container">
+            {% endif %}
 
-        <div class="rl-advanced-banner-layer {{ cssClass }}" style="
-            position: absolute;
-            width: {{ layer.config.width }};
-            height: {{ layer.config.height }};
-            top: {{ layer.config.posTop }};
-            right: {{ layer.config.posRight }};
-            bottom: {{ layer.config.posBottom }};
-            left: {{ layer.config.posLeft }};
-            padding: {{ layer.config.padTop }} {{ layer.config.padRight }} {{ layer.config.padBottom }} {{ layer.config.padLeft }}">
-            {% sw_include "@Storefront/storefront/banner-layer/rl-advanced-banner-layer-" ~ layer.type ~ ".html.twig" ignore missing %}
-        </div>
-
-        {% if layer.config.inContainer %}
+            <div class="rl-advanced-banner-layer {{ cssClass }}" style="
+                position: absolute;
+                width: {{ layer.config.width }};
+                height: {{ layer.config.height }};
+                top: {{ layer.config.posTop }};
+                right: {{ layer.config.posRight }};
+                bottom: {{ layer.config.posBottom }};
+                left: {{ layer.config.posLeft }};
+                padding: {{ layer.config.padTop }} {{ layer.config.padRight }} {{ layer.config.padBottom }} {{ layer.config.padLeft }}">
+                {% sw_include "@Storefront/storefront/banner-layer/rl-advanced-banner-layer-" ~ layer.type ~ ".html.twig" ignore missing %}
             </div>
-        {% endif %}
-    {% endfor %}
-</div>
+
+            {% if layer.config.inContainer %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
