@@ -2,7 +2,7 @@
     <sw-sidebar-collapse :expandOnLoading="true">
         <template slot="header">
             {{ $tc('rl-advanced-banners.layer.text.text-config') }}
-        </container>
+        </template>
         <template slot="content">
             <sw-text-editor :label="$tc('rl-advanced-banners.layer.text.content')"
                            v-model="config.content"></sw-text-editor>
@@ -25,15 +25,15 @@
                     </sw-select-field>
                 </div>
             </sw-container>
-        </container>
+        </template>
     </sw-sidebar-collapse>
 
     <sw-sidebar-collapse>
         <template slot="header">
             {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
-        </container>
+        </template>
         <template slot="content">
             <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
-        </container>
+        </template>
     </sw-sidebar-collapse>
 </div>

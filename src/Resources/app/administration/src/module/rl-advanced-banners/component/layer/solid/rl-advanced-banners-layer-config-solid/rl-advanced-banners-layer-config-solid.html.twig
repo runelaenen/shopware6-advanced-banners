@@ -1,0 +1,24 @@
+<div class="rl-advanced-banners-layer-config-solid">
+    <sw-sidebar-collapse :expandOnLoading="true">
+        <template slot="header">
+            {{ $tc('rl-advanced-banners.layer.solid.solid-config') }}
+        </template>
+        <template slot="content">
+            <sw-colorpicker
+                :label="$tc('rl-advanced-banners.layer.solid.color')"
+                v-model="config.color"
+                colorOutput="auto"
+                :zIndex="10000"
+                :alpha="true"></sw-colorpicker>
+        </template>
+    </sw-sidebar-collapse>
+
+    <sw-sidebar-collapse>
+        <template slot="header">
+            {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
+        </template>
+        <template slot="content">
+            <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
+        </template>
+    </sw-sidebar-collapse>
+</div>

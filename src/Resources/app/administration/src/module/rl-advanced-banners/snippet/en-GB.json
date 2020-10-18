@@ -25,6 +25,7 @@
             "modalDoneButton": "Done",
             "modalTitle": {
                 "text": "Text layer settings",
+                "solid": "Solid layer settings",
                 "image": "Image layer settings",
                 "button": "Button layer settings"
             },
@@ -51,6 +52,11 @@
                 "content": "Content",
                 "alignX": "Text Align",
                 "alignY": "Text Align Vertical"
+            },
+            "solid": {
+                "solid-config": "Solid Config",
+                "color": "Color",
+                "opacity": "Opacity"
             },
             "button": {
                 "button-config": "Button Config",

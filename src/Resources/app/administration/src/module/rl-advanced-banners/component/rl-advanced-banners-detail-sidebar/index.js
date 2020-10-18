@@ -86,6 +86,16 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 })
             });
         },
+        addSolidLayer() {
+            this.advancedBanner.data.layers.push({
+                id: utils.createId(),
+                type: 'solid',
+                position: this.newMaxPosition,
+                config: Object.assign(this.defaultConfig, {
+                    color: '#189eff'
+                })
+            });
+        },
         onLayerRemove(layer) {
             let data = this.advancedBanner.data.layers;
 
