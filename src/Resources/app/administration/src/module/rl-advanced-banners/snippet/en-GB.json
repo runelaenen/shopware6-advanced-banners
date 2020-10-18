@@ -22,6 +22,7 @@
             }
         },
         "layer": {
+            "modalDoneButton": "Done",
             "modalTitle": {
                 "text": "Text layer settings",
                 "image": "Image layer settings",

@@ -1,9 +1,9 @@
 <div class="rl-advanced-banners-layer-config-image">
     <sw-sidebar-collapse :expandOnLoading="true">
-        <container slot="header">
+        <template slot="header">
             {{ $tc('rl-advanced-banners.layer.image.media-config') }}
-        </container>
-        <container slot="content">
+        </template>
+        <template slot="content">
             <sw-media-compact-upload-v2
                 :source="media && media.id ? media : null"
                 :uploadTag="uploadTag"
@@ -58,15 +58,15 @@
                     </sw-select-field>
                 </div>
             </sw-container>
-        </container>
+        </template>
     </sw-sidebar-collapse>
 
     <sw-sidebar-collapse>
-        <container slot="header">
+        <template slot="header">
             {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
-        </container>
-        <container slot="content">
+        </template>
+        <template slot="content">
             <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
-        </container>
+        </template>
     </sw-sidebar-collapse>
 </div>

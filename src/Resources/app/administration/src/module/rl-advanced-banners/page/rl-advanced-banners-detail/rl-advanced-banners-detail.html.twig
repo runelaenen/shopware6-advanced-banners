@@ -47,10 +47,12 @@
 
                 <div class="rl-advanced-banners-detail__stage-container">
                     <div class="rl-advanced-banners-detail__stage">
-                        <rl-advanced-banners-detail-preview :advancedBanner="advancedBanner"></rl-advanced-banners-detail-preview>
+                        <rl-advanced-banners-detail-preview v-if="advancedBanner"
+                                                            :advancedBanner="advancedBanner"></rl-advanced-banners-detail-preview>
                     </div>
 
-                    <rl-advanced-banners-detail-sidebar :advancedBanner="advancedBanner"></rl-advanced-banners-detail-sidebar>
+                    <rl-advanced-banners-detail-sidebar v-if="advancedBanner"
+                                                        :advancedBanner="advancedBanner"></rl-advanced-banners-detail-sidebar>
                 </div>
             </div>
         {% endblock %}

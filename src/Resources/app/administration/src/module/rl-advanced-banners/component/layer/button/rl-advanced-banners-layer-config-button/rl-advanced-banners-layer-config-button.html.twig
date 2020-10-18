@@ -1,9 +1,9 @@
 <div class="rl-advanced-banners-layer-config-button">
     <sw-sidebar-collapse :expandOnLoading="true">
-        <container slot="header">
+        <template slot="header">
             {{ $tc('rl-advanced-banners.layer.button.button-config') }}
         </container>
-        <container slot="content">
+        <template slot="content">
             <sw-text-field :label="$tc('rl-advanced-banners.layer.button.content')"
                            v-model="config.content"></sw-text-field>
 
@@ -49,10 +49,10 @@
     </sw-sidebar-collapse>
 
     <sw-sidebar-collapse>
-        <container slot="header">
+        <template slot="header">
             {{ $tc('rl-advanced-banners.layer.config.basic-config') }}
         </container>
-        <container slot="content">
+        <template slot="content">
             <rl-advanced-banners-layer-default-config :layer="layer"></rl-advanced-banners-layer-default-config>
         </container>
     </sw-sidebar-collapse>

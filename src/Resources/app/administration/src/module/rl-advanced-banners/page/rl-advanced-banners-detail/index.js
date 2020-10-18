@@ -17,9 +17,7 @@ Component.register('rl-advanced-banners-detail', {
     ],
 
     shortcuts: {
-        'SYSTEMKEY+S': {
-            method: 'onSave'
-        },
+        'SYSTEMKEY+S': 'onSave',
         ESCAPE: 'onCancel'
     },
 
