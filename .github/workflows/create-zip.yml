@@ -29,9 +29,6 @@ jobs:
             -   name: Build Zip
                 run: php frosh-plugin-upload.phar ext:zip ${PLUGIN_NAME}
 
-            -   name: StoreUpload
-                run: php frosh-plugin-upload.phar ext:upload $(pwd)/${PLUGIN_NAME}*.zip
-
             -   name: Create Release
                 id: create_release
                 uses: actions/create-release@v1.0.0
