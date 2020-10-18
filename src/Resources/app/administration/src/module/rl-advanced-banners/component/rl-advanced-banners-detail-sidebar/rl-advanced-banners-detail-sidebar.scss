@@ -72,6 +72,10 @@
     }
 }
 
+.rl-advanced-banners-detail-layers-actions {
+    display: flex;
+}
+
 .rl-advanced-banners-detail-layers-action {
     display: inline-block;
     border-width: 0 1px 1px 0;
@@ -81,6 +85,11 @@
     margin: 0;
     background: white;
     cursor: pointer;
+    transition: all .2s ease;
+
+    &:hover {
+        background: #f3f3f3;
+    }
 }
 
 .rl-advanced-banners-detail-sidebar__block-preview {

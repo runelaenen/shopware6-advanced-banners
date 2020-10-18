@@ -35,22 +35,24 @@
                          ref="bannerLayersSidebar">
 
             <div class="rl-advanced-banners-detail-layers-actions">
-                <div class="rl-advanced-banners-detail-layers-action"
-                     @click="addTextLayer">
-                    Text layer
-                </div>
-                <div class="rl-advanced-banners-detail-layers-action"
-                     @click="addSolidLayer">
-                    Solid layer
-                </div>
-                <div class="rl-advanced-banners-detail-layers-action"
-                     @click="addImageLayer">
-                    Image layer
-                </div>
-                <div class="rl-advanced-banners-detail-layers-action"
-                     @click="addButtonLayer">
-                    Button layer
-                </div>
+                {% block rl_advanced_banners_sidebar_banner_layers_actions %}
+                    <div class="rl-advanced-banners-detail-layers-action"
+                         @click="addTextLayer">
+                        Text
+                    </div>
+                    <div class="rl-advanced-banners-detail-layers-action"
+                         @click="addSolidLayer">
+                        Solid
+                    </div>
+                    <div class="rl-advanced-banners-detail-layers-action"
+                         @click="addImageLayer">
+                        Image
+                    </div>
+                    <div class="rl-advanced-banners-detail-layers-action"
+                         @click="addButtonLayer">
+                        Button
+                    </div>
+                {% endblock %}
             </div>
 
             {% block rl_advanced_banners_sidebar_banner_layers_content %}
