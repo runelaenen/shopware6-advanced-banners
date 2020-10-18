@@ -49,16 +49,32 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
         }
     },
 
-    created() {
-        if (this.config.mediaId.length === 0) {
-            return;
+    watch: {
+        config: {
+            handler(value) {
+                this.loadMedia();
+            },
+            immediate: true,
+            deep: true
         }
+    },
 
-        this.isLoading = true;
-        this.mediaRepository.get(this.config.mediaId, Shopware.Context.api).then((mediaItem) => {
-            this.media = mediaItem;
-            this.isLoading = false;
-        });
+
+    methods: {
+        loadMedia() {
+            if (this.config.mediaId.length === 0) {
+                return;
+            }
+            if (this.media && this.media.id === this.config.mediaId) {
+                return;
+            }
+
+            this.isLoading = true;
+            this.mediaRepository.get(this.config.mediaId, Shopware.Context.api).then((mediaItem) => {
+                this.media = mediaItem;
+                this.isLoading = false;
+            });
+        }
     },
 
     props: {
