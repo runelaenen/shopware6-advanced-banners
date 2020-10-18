@@ -1,5 +1,7 @@
-<div class="rl-advanced-banner-text text-align-x-{{ layer.config.textAlignX }} text-align-y-{{ layer.config.textAlignY }}">
-    <div>
-        {{ layer.config.content|raw }}
+{% block rl_advanced_banner_layer_text %}
+    <div class="rl-advanced-banner-text text-align-x-{{ layer.config.textAlignX }} text-align-y-{{ layer.config.textAlignY }}">
+        <div>
+            {{ layer.config.content|raw }}
+        </div>
     </div>
-</div>
+{% endblock %}

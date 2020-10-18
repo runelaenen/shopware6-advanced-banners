@@ -1,7 +1,9 @@
-<div class="rl-advanced-banner-button button-align-x-{{ layer.config.buttonAlignX }} button-align-y-{{ layer.config.buttonAlignY }}">
-    <a href="{{ layer.config.buttonLink }}"
-       target="{{ layer.config.buttonTarget }}"
-       class="btn btn-{{ layer.config.buttonVariant }}">
-        {{ layer.config.content|raw }}
-    </a>
-</div>
+{% block rl_advanced_banner_layer_button %}
+    <div class="rl-advanced-banner-button button-align-x-{{ layer.config.buttonAlignX }} button-align-y-{{ layer.config.buttonAlignY }}">
+        <a href="{{ layer.config.buttonLink }}"
+           target="{{ layer.config.buttonTarget }}"
+           class="btn btn-{{ layer.config.buttonVariant }}">
+            {{ layer.config.content|raw }}
+        </a>
+    </div>
+{% endblock %}

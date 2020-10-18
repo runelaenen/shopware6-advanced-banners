@@ -1,0 +1,27 @@
+{% block rl_advanced_banner_layer %}
+    {% if layer.config.inContainer %}
+        <div class="rl-advanced-banner-container-wrapper">
+        <div class="container rl-advanced-banner-container">
+    {% endif %}
+
+    {% block rl_advanced_banner_layer_wrapper %}
+        <div class="rl-advanced-banner-layer {{ layer.config.cssClass }}" style="
+            position: absolute;
+            width: {{ layer.config.width }};
+            height: {{ layer.config.height }};
+            top: {{ layer.config.posTop }};
+            right: {{ layer.config.posRight }};
+            bottom: {{ layer.config.posBottom }};
+            left: {{ layer.config.posLeft }};
+            padding: {{ layer.config.padTop }} {{ layer.config.padRight }} {{ layer.config.padBottom }} {{ layer.config.padLeft }}">
+            {% block rl_advanced_banner_layer_content %}
+                {% sw_include "@Storefront/storefront/banner-layer/rl-advanced-banner-layer-" ~ layer.type ~ ".html.twig" ignore missing %}
+            {% endblock %}
+        </div>
+    {% endblock %}
+
+    {% if layer.config.inContainer %}
+        </div>
+        </div>
+    {% endif %}
+{% endblock %}
