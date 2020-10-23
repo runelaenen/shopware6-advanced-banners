@@ -62,14 +62,20 @@
                         :repository="repository"
                         :columns="columns"
                         :items="items">
+                        {% block rl_advanced_banners_overview_content_list_created_at %}
+                            <template #column-createdAt="{ item }">
+                                {{ item.createdAt|date({hour: '2-digit', minute: '2-digit'}) }}
+                            </template>
+                        {% endblock %}
 
-                        {% block rl_advanced_banners_overview_content_list_technical_name %}
-                            <template #column-technical-name="{ item }">
-                                <div class="rl-advanced-banners-overview-text_ellipsis">
-                                    <router-link :to="{ name: 'rl.advanced.banners.detail', params: { id: item.id } }">
-                                        {{ item.technicalName }}
-                                    </router-link>
-                                </div>
+                        {% block rl_advanced_banners_overview_content_list_actions %}
+                            <template #more-actions="{ item }">
+                                {% block rl_advanced_banners_overview_content_list_actions_duplicate %}
+                                    <sw-context-menu-item @click="onDuplicate(item)"
+                                                          class="sw-entity-listing__context-menu-edit-duplicate">
+                                        {{ $tc('rl-advanced-banners.list.contextMenu.duplicate') }}
+                                    </sw-context-menu-item>
+                                {% endblock %}
                             </template>
                         {% endblock %}
                     </sw-entity-listing>

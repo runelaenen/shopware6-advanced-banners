@@ -5,8 +5,13 @@
             "placeholderSearchBar": "Search",
             "buttonCreateBanner": "Create",
             "technicalName": "Technical Name",
+            "createdAt": "Created At",
             "createModalTitle": "Create Advanced Banner",
-            "createBannerTitleLabel": "Advanced Banner Title"
+            "createBannerTitleLabel": "Advanced Banner Title",
+            "contextMenu": {
+                "duplicate": "Duplicate"
+            },
+            "duplicatedBanner": "(duplicate)"
         },
         "tooltip": {
             "warning": "Create Advanced Banner"

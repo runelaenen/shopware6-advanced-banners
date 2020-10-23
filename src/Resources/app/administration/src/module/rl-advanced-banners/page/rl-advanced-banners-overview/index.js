@@ -1,7 +1,9 @@
 import template from './rl-advanced-banners-overview.html.twig';
 
-const { Component } = Shopware;
-const { Criteria } = Shopware.Data;
+const utils = Shopware.Utils;
+
+const {Component} = Shopware;
+const {Criteria} = Shopware.Data;
 
 Shopware.Component.register('rl-advanced-banners-overview', {
     template,
@@ -35,6 +37,11 @@ Shopware.Component.register('rl-advanced-banners-overview', {
                     dataIndex: 'technicalName',
                     label: 'rl-advanced-banners.list.technicalName',
                     routerLink: 'rl.advanced.banners.detail',
+                }, {
+                    property: 'createdAt',
+                    dataIndex: 'createdAt',
+                    label: 'rl-advanced-banners.list.createdAt',
+                    routerLink: 'rl.advanced.banners.detail',
                 }
             ];
         }
@@ -61,7 +68,7 @@ Shopware.Component.register('rl-advanced-banners-overview', {
 
             this.isLoading = true;
 
-            const context = { ...Shopware.Context.api };
+            const context = {...Shopware.Context.api};
 
             return this.repository.search(this.criteria, context).then((result) => {
                 this.total = result.total;
@@ -79,9 +86,32 @@ Shopware.Component.register('rl-advanced-banners-overview', {
         onDelete(option) {
             this.$refs.listing.deleteItem(option);
 
-            this.repository.search(this.criteria, { ...Shopware.Context.api, inheritance: true }).then((result) => {
+            this.repository.search(this.criteria, {...Shopware.Context.api, inheritance: true}).then((result) => {
                 this.total = result.total;
                 this.items = result;
+            });
+        },
+
+        onDuplicate(item) {
+            this.isLoading = true;
+
+            this.repository.clone(item.id, Shopware.Context.api).then((result) => {
+                this.repository.get(result.id, Shopware.Context.api)
+                    .then((banner) => {
+                        banner.technicalName = banner.technicalName + ' ' + this.$tc('rl-advanced-banners.list.duplicatedBanner');
+                        this.repository.save(banner, Shopware.Context.api).then(() => {
+                            this.$nextTick(function () {
+                                this.$router.push({
+                                    name: 'rl.advanced.banners.detail',
+                                    params: {
+                                        id: banner.id
+                                    }
+                                });
+                            });
+                        });
+                    }).catch(() => {
+                    this.isLoading = false;
+                });
             });
         },
 
