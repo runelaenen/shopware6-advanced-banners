@@ -6,5 +6,4 @@ use Shopware\Core\Framework\Plugin;
 
 class RuneLaenenAdvancedBanners extends Plugin
 {
-
 }
