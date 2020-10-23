@@ -18,7 +18,13 @@
             "sidebar": {
                 "titleBannerSettings": "Settings",
                 "titleBannerBaseSettings": "Basic settings",
-                "titleBannerLayers": "Layers"
+                "titleBannerLayers": "Layers",
+                "addLayer": {
+                    "text": "Text",
+                    "button": "Button",
+                    "image": "Image",
+                    "solid": "Solid"
+                }
             }
         },
         "layer": {

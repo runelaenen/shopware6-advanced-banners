@@ -38,19 +38,19 @@
                 {% block rl_advanced_banners_sidebar_banner_layers_actions %}
                     <div class="rl-advanced-banners-detail-layers-action"
                          @click="addTextLayer">
-                        Text
+                        {{ 'rl-advanced-banners.detail.sidebar.addLayer.text'|trans }}
                     </div>
                     <div class="rl-advanced-banners-detail-layers-action"
                          @click="addSolidLayer">
-                        Solid
+                        {{ 'rl-advanced-banners.detail.sidebar.addLayer.solid'|trans }}
                     </div>
                     <div class="rl-advanced-banners-detail-layers-action"
                          @click="addImageLayer">
-                        Image
+                        {{ 'rl-advanced-banners.detail.sidebar.addLayer.image'|trans }}
                     </div>
                     <div class="rl-advanced-banners-detail-layers-action"
                          @click="addButtonLayer">
-                        Button
+                        {{ 'rl-advanced-banners.detail.sidebar.addLayer.button'|trans }}
                     </div>
                 {% endblock %}
             </div>

@@ -4,8 +4,6 @@ import './rl-advanced-banners-detail-preview.scss';
 import defaultCssStyles from '../../service/default-css-styles';
 
 const { Component, Mixin } = Shopware;
-const { Criteria } = Shopware.Data;
-const utils = Shopware.Utils;
 
 Component.register('rl-advanced-banners-detail-preview', {
     template,
