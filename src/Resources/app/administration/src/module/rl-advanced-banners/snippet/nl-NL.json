@@ -1,0 +1,130 @@
+{
+    "rl-advanced-banners": {
+        "list": {
+            "textBannerOverview": "Advanced Banners",
+            "placeholderSearchBar": "Zoeken",
+            "buttonCreateBanner": "Aanmaken",
+            "technicalName": "Technische naam",
+            "createdAt": "Gemaakt op",
+            "createModalTitle": "Advanced Banner aanmaken",
+            "createBannerTitleLabel": "Advanced Banner Titel",
+            "contextMenu": {
+                "duplicate": "Dupliceer"
+            },
+            "duplicatedBanner": "(duplicaat)"
+        },
+        "tooltip": {
+            "warning": "Advanced Banner maken"
+        },
+        "detail": {
+            "textHeadline": "Nieuwe Advanced Banner",
+            "cardTitleBannerInfo": "Banner info",
+            "labelTechnicalName": "Technische naam",
+            "sidebar": {
+                "titleBannerSettings": "Installingen",
+                "titleBannerBaseSettings": "Basisinstellingen",
+                "titleBannerLayers": "Lagen",
+                "addLayer": {
+                    "text": "Tekst",
+                    "button": "Knop",
+                    "image": "Foto",
+                    "solid": "Vlak"
+                }
+            }
+        },
+        "layer": {
+            "modalDoneButton": "Klaar",
+            "modalTitle": {
+                "text": "Tekstlaag instellingen",
+                "solid": "Vlaklaag instellingen",
+                "image": "Fotolaag instellingen",
+                "button": "Knoplaag instellingen"
+            },
+            "config": {
+                "basic-config": "Basisconfiguratie",
+                "technicalName": "Technische naam",
+                "cssClass": "CSS Klasse"
+            },
+            "position": {
+                "center": "Midden",
+                "left": "Link",
+                "right": "Rechts",
+                "top": "Boven",
+                "bottom": "Onder"
+            },
+            "padding": {
+                "left": "Witruimte Links",
+                "right": "Witruimte Rechts",
+                "top": "Witruimte Boven",
+                "bottom": "Witruimte Onder"
+            },
+            "text": {
+                "text-config": "Tekstconfiguratie",
+                "content": "Inhoud",
+                "alignX": "Tekstuitlijning",
+                "alignY": "Verticale tekstuitlijning"
+            },
+            "solid": {
+                "solid-config": "Vlakconfiguratie",
+                "color": "Kleur",
+                "opacity": "Doorzichtbaarheid"
+            },
+            "button": {
+                "button-config": "Knopconfiguratie",
+                "content": "Inhoud",
+                "link": "Linkt naar",
+                "target": "Doel",
+                "variant": "Knopvariant",
+                "alignX": "Knop uitlijning",
+                "alignY": "Verticale knop uitlijning",
+                "buttonTargetList": {
+                    "self": "Zelfde tabblad",
+                    "blank": "Nieuw tabblad"
+                }
+            },
+            "image": {
+                "media-config": "Media Configuratie",
+                "mediaLabel": "Media",
+                "mediaMode": "Fotomodus",
+                "backgroundMediaModeAuto": "Auto",
+                "backgroundMediaModeCover": "Bedekken",
+                "backgroundMediaModeContain": "Bevatten",
+                "mediaRepeat": "Herhalen",
+                "mediaNoRepeat": "Niet herhalen",
+                "positionX": "X positie",
+                "positionY": "Y positie",
+                "width": "Breedte",
+                "height": "Hoogte",
+                "inContainer": "In Container"
+            }
+        }
+    },
+    "sw-cms": {
+        "blocks": {
+            "image": {
+                "rlAdvancedBanner": {
+                    "label": "Advanced Banner"
+                },
+                "rlAdvancedBannerSlider": {
+                    "label": "Advanced Banner Slider"
+                }
+            }
+        },
+        "elements": {
+            "rlAdvancedBanner": {
+                "label": "Advanced Banner",
+                "config": {
+                    "advancedBannerSelect": "Select Advanced Banner",
+                    "advancedBannerHeight": "Hoogte"
+                }
+            },
+            "rlAdvancedBannerSlider": {
+                "label": "Advanced Banner Slider",
+                "config": {
+                    "advancedBannerSelect": "Select Advanced Banners",
+                    "advancedBannerHeight": "Hoogte"
+                }
+            }
+        }
+    }
+}
