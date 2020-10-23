@@ -15,5 +15,8 @@
             "de-DE": "Advanced Banners (Digital Publishing) plugin",
             "en-GB": "Advanced Banners (Digital Publishing) plugin"
         }
+    },
+    "require-dev": {
+        "phpro/grumphp-shim": "^1.0"
     }
 }

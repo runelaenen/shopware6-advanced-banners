@@ -20,7 +20,7 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner', {
         },
 
         previewStyle() {
-            return 'height: ' + this.element.config.height.value + ';';
+            return `height: ${this.element.config.height.value};`;
         }
     },
 
@@ -28,6 +28,6 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner', {
         createdComponent() {
             this.initElementConfig('rl-advanced-banner');
             this.initElementData('rl-advanced-banner');
-        },
+        }
     }
 });

@@ -27,5 +27,5 @@ Component.register('rl-advanced-banners-detail-preview', {
             required: false,
             default: false
         }
-    },
+    }
 });

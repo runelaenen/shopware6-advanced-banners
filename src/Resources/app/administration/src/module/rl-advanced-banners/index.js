@@ -40,8 +40,8 @@ Shopware.Module.register('rl-advanced-banners', {
                         advancedBannerId: route.params.id
                     };
                 }
-            },
-        },
+            }
+        }
     },
 
     navigation: [{

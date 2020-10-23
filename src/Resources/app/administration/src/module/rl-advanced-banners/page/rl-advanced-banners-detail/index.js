@@ -96,7 +96,7 @@ Component.register('rl-advanced-banners-detail', {
                 .then((banner) => {
                     this.advancedBanner = banner;
                     if (!this.advancedBanner.data) {
-                        this.$set(this.advancedBanner, 'data', {layers: []});
+                        this.$set(this.advancedBanner, 'data', { layers: [] });
                     }
                     if (!this.advancedBanner.data.layers) {
                         this.$set(this.advancedBanner.data, 'layers', []);

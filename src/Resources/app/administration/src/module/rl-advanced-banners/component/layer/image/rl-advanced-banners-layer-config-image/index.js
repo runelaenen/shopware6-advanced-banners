@@ -1,28 +1,26 @@
 import template from './rl-advanced-banners-layer-config-image.html.twig';
 import './rl-advanced-banners-layer-config-image.scss';
 
-const { Component, Mixin } = Shopware;
-const { Criteria } = Shopware.Data;
-const utils = Shopware.Utils;
+const { Component } = Shopware;
 
 Component.register('rl-advanced-banners-layer-config-image', {
     template,
 
     inject: [
-        'repositoryFactory',
+        'repositoryFactory'
     ],
 
     props: {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     data() {
         return {
             media: null,
-            isLoading: false,
+            isLoading: false
         };
     },
 
@@ -35,7 +33,7 @@ Component.register('rl-advanced-banners-layer-config-image', {
         },
         mediaRepository() {
             return this.repositoryFactory.create('media');
-        },
+        }
     },
 
     created() {
@@ -67,6 +65,6 @@ Component.register('rl-advanced-banners-layer-config-image', {
         removeMedia() {
             this.$set(this.config, 'mediaId', null);
             this.media = null;
-        },
+        }
     }
 });

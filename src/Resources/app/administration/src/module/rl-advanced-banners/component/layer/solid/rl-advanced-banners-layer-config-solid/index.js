@@ -10,7 +10,7 @@ Component.register('rl-advanced-banners-layer-config-solid', {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     computed: {

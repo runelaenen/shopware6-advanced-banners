@@ -18,7 +18,7 @@ Component.register('rl-advanced-banners-detail-preview-layer-solid', {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     computed: {
@@ -28,9 +28,9 @@ Component.register('rl-advanced-banners-detail-preview-layer-solid', {
         previewStyles() {
             let styles = this.defaultCssStyles(this.layer);
 
-            styles += 'background-color: ' + this.layer.config.color;
+            styles += `background-color: ${this.layer.config.color}`;
 
             return styles;
         }
-    },
+    }
 });

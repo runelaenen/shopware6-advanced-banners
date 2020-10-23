@@ -2,8 +2,6 @@ import template from './rl-advanced-banners-detail-layer.html.twig';
 import './rl-advanced-banners-detail-layer.scss';
 
 const { Component, Mixin } = Shopware;
-const { Criteria } = Shopware.Data;
-const utils = Shopware.Utils;
 
 Component.register('rl-advanced-banners-detail-layer', {
     template,
@@ -16,7 +14,7 @@ Component.register('rl-advanced-banners-detail-layer', {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     data() {
@@ -26,14 +24,14 @@ Component.register('rl-advanced-banners-detail-layer', {
     },
 
     created() {
-        if(Array.isArray(this.layer.config)) {
+        if (Array.isArray(this.layer.config)) {
             this.$set(this.layer, 'config', {});
         }
     },
 
     computed: {
         configExists() {
-            return ('rl-advanced-banners-layer-config-' + this.layer.type) in this.$options.components;
+            return (`rl-advanced-banners-layer-config-${this.layer.type}`) in this.$options.components;
         }
     },
 

@@ -20,6 +20,6 @@ Shopware.Service('cmsService').registerCmsElement({
         height: {
             source: 'static',
             value: '340px'
-        },
+        }
     }
 });

@@ -10,12 +10,12 @@ Component.register('rl-advanced-banners-layer-default-config', {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     computed: {
         config() {
             return this.layer.config || {};
         }
-    },
+    }
 });

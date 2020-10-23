@@ -27,7 +27,7 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner-slider', {
         },
 
         previewStyle() {
-            return 'height: ' + this.element.config.height.value + ';';
+            return `height: ${this.element.config.height.value};`;
         },
 
         hasBanners() {

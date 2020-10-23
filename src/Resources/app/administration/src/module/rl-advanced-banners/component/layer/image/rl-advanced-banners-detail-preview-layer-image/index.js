@@ -18,7 +18,7 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
     data() {
         return {
             media: null,
-            isLoading: false,
+            isLoading: false
         };
     },
 
@@ -30,7 +30,7 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
             return this.repositoryFactory.create('media');
         },
         previewClasses() {
-            let classes = ['rl-advanced-banners-detail-preview-layer-image__image'];
+            const classes = ['rl-advanced-banners-detail-preview-layer-image__image'];
             if (this.config.mediaMode === 'contain') {
                 classes.push('bs-contain');
             }
@@ -41,9 +41,9 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
         },
         backgroundStyle() {
             let styles = this.defaultCssStyles(this.layer);
-            styles += 'background-image: url(\'' + this.media.url + '\');';
-            styles += 'background-position: ' + this.config.mediaPositionX + ' ' + this.config.mediaPositionY + ';';
-            styles += 'background-repeat: ' + this.config.mediaRepeat + ';';
+            styles += `background-image: url('${this.media.url}');`;
+            styles += `background-position: ${this.config.mediaPositionX} ${this.config.mediaPositionY};`;
+            styles += `background-repeat: ${this.config.mediaRepeat};`;
 
             return styles;
         }
@@ -51,7 +51,7 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
 
     watch: {
         config: {
-            handler(value) {
+            handler() {
                 this.loadMedia();
             },
             immediate: true,
@@ -81,6 +81,6 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
         layer: {
             type: Object,
             required: true
-        },
-    },
+        }
+    }
 });

@@ -1,22 +1,20 @@
 import template from './rl-advanced-banners-layer-config-button.html.twig';
 import './rl-advanced-banners-layer-config-button.scss';
 
-const {Component, Mixin} = Shopware;
-const {Criteria} = Shopware.Data;
-const utils = Shopware.Utils;
+const { Component } = Shopware;
 
 Component.register('rl-advanced-banners-layer-config-button', {
     template,
 
     inject: [
-        'repositoryFactory',
+        'repositoryFactory'
     ],
 
     props: {
         layer: {
             type: Object,
             required: true
-        },
+        }
     },
 
     data() {
@@ -56,7 +54,7 @@ Component.register('rl-advanced-banners-layer-config-button', {
     computed: {
         config() {
             return this.layer.config || {};
-        },
+        }
     },
 
     methods: {}

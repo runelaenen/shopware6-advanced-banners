@@ -2,7 +2,6 @@ import template from './rl-advanced-banners-detail-sidebar.html.twig';
 import './rl-advanced-banners-detail-sidebar.scss';
 
 const { Component, Mixin } = Shopware;
-const { Criteria } = Shopware.Data;
 const utils = Shopware.Utils;
 
 Component.register('rl-advanced-banners-detail-sidebar', {
@@ -16,7 +15,7 @@ Component.register('rl-advanced-banners-detail-sidebar', {
         advancedBanner: {
             type: Object,
             required: true
-        },
+        }
     },
 
     computed: {
@@ -52,7 +51,7 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 type: 'text',
                 position: this.newMaxPosition,
                 config: Object.assign(this.defaultConfig, {
-                    content: "Placeholder text",
+                    content: 'Placeholder text',
                     textAlignX: 'left',
                     textAlignY: 'top'
                 })
@@ -97,10 +96,10 @@ Component.register('rl-advanced-banners-detail-sidebar', {
             });
         },
         onLayerRemove(layer) {
-            let data = this.advancedBanner.data.layers;
+            const data = this.advancedBanner.data.layers;
 
-            for (let i = 0; i < data.length; i++) {
-                if(data[i].id === layer.id) {
+            for (let i = 0; i < data.length; i += 1) {
+                if (data[i].id === layer.id) {
                     data.splice(i, 1);
                     break;
                 }
@@ -114,8 +113,8 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 return;
             }
 
-            let oldIndex = dragData.position;
-            let newIndex = dropData.position;
+            const oldIndex = dragData.position;
+            const newIndex = dropData.position;
 
             if (oldIndex < 0 || oldIndex >= this.advancedBanner.data.layers.length) {
                 return;

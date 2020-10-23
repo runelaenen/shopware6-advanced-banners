@@ -1,5 +1,5 @@
-import template from './sw-cms-el-config-rl-advanced-banner.html.twig';
 import Criteria from 'src/core/data-new/criteria.data';
+import template from './sw-cms-el-config-rl-advanced-banner.html.twig';
 
 const { Component, Mixin } = Shopware;
 
@@ -19,7 +19,7 @@ Component.register('sw-cms-el-config-rl-advanced-banner', {
     computed: {
         bannerRepository() {
             return this.repositoryFactory.create('rl_ab_banner');
-        },
+        }
     },
 
     methods: {
