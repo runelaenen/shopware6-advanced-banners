@@ -19,6 +19,10 @@ Create layered, responsive banners & slideshows like you could do with _Shopware
    - Buttons
    - Solid (color)
    - Image
+ - Fully localized
+   - English
+   - German
+   - Dutch
  - Easily extendible
  - 'Advanced Banner' CMS element
  - 'Advanced Banner Slider' CMS element
