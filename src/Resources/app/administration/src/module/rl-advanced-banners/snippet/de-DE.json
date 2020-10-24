@@ -1,0 +1,130 @@
+{
+    "rl-advanced-banners": {
+        "list": {
+            "textBannerOverview": "Advanced Banners",
+            "placeholderSearchBar": "Durchsuche alle Advanced Banners",
+            "buttonCreateBanner": "Advanced Banner anlegen",
+            "technicalName": "Technischer Name",
+            "createdAt": "Änderungsdatum",
+            "createModalTitle": "Advanced Banner anlegen",
+            "createBannerTitleLabel": "Technischer Name des Advanced Banners",
+            "contextMenu": {
+                "duplicate": "Duplizieren"
+            },
+            "duplicatedBanner": "(dupliziert)"
+        },
+        "tooltip": {
+            "warning": "Advanced Banner anlegen"
+        },
+        "detail": {
+            "textHeadline": "Neuer Advanced Banner",
+            "cardTitleBannerInfo": "Banner Informationen",
+            "labelTechnicalName": "Technischer Name",
+            "sidebar": {
+                "titleBannerSettings": "Einstellungen",
+                "titleBannerBaseSettings": "Basis-Informationen",
+                "titleBannerLayers": "Ebene",
+                "addLayer": {
+                    "text": "Text",
+                    "button": "Schaltfläche",
+                    "image": "Bild",
+                    "solid": "Hintergrund"
+                }
+            }
+        },
+        "layer": {
+            "modalDoneButton": "Fertig",
+            "modalTitle": {
+                "text": "Einstellungen der Text-Ebene",
+                "solid": "Einstellungen der Hintergrund-Ebene",
+                "image": "Einstellungen der Bild-Ebene",
+                "button": "Einstellungen der Schaltflächen-Ebene"
+            },
+            "config": {
+                "basic-config": "Basis-Konfiguration",
+                "technicalName": "Technischer Name",
+                "cssClass": "CSS-Klassen"
+            },
+            "position": {
+                "center": "Mitte",
+                "left": "Links",
+                "right": "Rechts",
+                "top": "Oben",
+                "bottom": "Unten"
+            },
+            "padding": {
+                "left": "Linker Abstand",
+                "right": "Rechter Abstand",
+                "top": "Oberer Abstand",
+                "bottom": "Unterer Abstand"
+            },
+            "text": {
+                "text-config": "Text-Einstellungen",
+                "content": "Text",
+                "alignX": "Horizontale Ausrichtung",
+                "alignY": "Vertikale Ausrichtung"
+            },
+            "solid": {
+                "solid-config": "Hintergrund-Einstellungen",
+                "color": "Hintergrundfarbe",
+                "opacity": "Deckkraft"
+            },
+            "button": {
+                "button-config": "Schaltflächen-Einstellungen",
+                "content": "Text",
+                "link": "Link zu",
+                "target": "Link öffnen",
+                "variant": "Aussehen der Schaltfläche",
+                "alignX": "Horizontale Ausrichtung",
+                "alignY": "Vertikale Ausrichtung",
+                "buttonTargetList": {
+                    "self": "Im gleichen Tab",
+                    "blank": "In einem neuem Tab"
+                }
+            },
+            "image": {
+                "media-config": "Bild-Einstellungen",
+                "mediaLabel": "Bild",
+                "mediaMode": "Anzeigemodus",
+                "backgroundMediaModeAuto": "Standard",
+                "backgroundMediaModeCover": "Strecken",
+                "backgroundMediaModeContain": "Füllen",
+                "mediaRepeat": "Bild wiederholen",
+                "mediaNoRepeat": "Bild nicht wiederholen",
+                "positionX": "Horizontale Ausrichtung",
+                "positionY": "Vertikale Ausrichtung",
+                "width": "Breite",
+                "height": "Höhe",
+                "inContainer": "Umschließender Container"
+            }
+        }
+    },
+    "sw-cms": {
+        "blocks": {
+            "image": {
+                "rlAdvancedBanner": {
+                    "label": "Advanced Banner"
+                },
+                "rlAdvancedBannerSlider": {
+                    "label": "Advanced Banner Slider"
+                }
+            }
+        },
+        "elements": {
+            "rlAdvancedBanner": {
+                "label": "Advanced Banner",
+                "config": {
+                    "advancedBannerSelect": "Wähle einen Advanced Banner aus",
+                    "advancedBannerHeight": "Höhe"
+                }
+            },
+            "rlAdvancedBannerSlider": {
+                "label": "Advanced Banner Slider",
+                "config": {
+                    "advancedBannerSelect": "Wähle mehrere Advanced Banner aus",
+                    "advancedBannerHeight": "Höhe"
+                }
+            }
+        }
+    }
+}
