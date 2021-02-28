@@ -1,3 +1,5 @@
+import './acl'
+
 import './component/rl-advanced-banners-detail-sidebar';
 import './component/rl-advanced-banners-detail-layer';
 import './component/rl-advanced-banners-detail-preview';
@@ -29,7 +31,10 @@ Shopware.Module.register('rl-advanced-banners', {
     routes: {
         overview: {
             component: 'rl-advanced-banners-overview',
-            path: 'overview'
+            path: 'overview',
+            meta: {
+                privilege: 'rl_ab_banner.viewer'
+            }
         },
         detail: {
             component: 'rl-advanced-banners-detail',
@@ -40,6 +45,9 @@ Shopware.Module.register('rl-advanced-banners', {
                         advancedBannerId: route.params.id
                     };
                 }
+            },
+            meta: {
+                privilege: 'rl_ab_banner.viewer'
             }
         }
     },
@@ -49,6 +57,7 @@ Shopware.Module.register('rl-advanced-banners', {
         color: '#0071d2',
         path: 'rl.advanced.banners.overview',
         icon: 'default-object-puzzle-piece',
-        parent: 'sw-content'
+        parent: 'sw-content',
+        privilege: 'rl_ab_banner.viewer'
     }]
 });

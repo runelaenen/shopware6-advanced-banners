@@ -31,6 +31,7 @@
                             {% block rl_advanced_banners_detail_toolbar_actions_save %}
                                 <sw-button-process
                                     class="sw-property-detail__save-action"
+                                    v-if="acl.can('rl_ab_banner.editor')"
                                     :isLoading="isLoading"
                                     :processSuccess="isSaveSuccessful"
                                     :disabled="isLoading"
@@ -51,7 +52,7 @@
                                                             :advancedBanner="advancedBanner"></rl-advanced-banners-detail-preview>
                     </div>
 
-                    <rl-advanced-banners-detail-sidebar v-if="advancedBanner"
+                    <rl-advanced-banners-detail-sidebar v-if="advancedBanner && acl.can('rl_ab_banner.editor')"
                                                         :advancedBanner="advancedBanner"></rl-advanced-banners-detail-sidebar>
                 </div>
             </div>

@@ -8,7 +8,8 @@ Component.register('rl-advanced-banners-detail', {
     template,
 
     inject: [
-        'repositoryFactory'
+        'repositoryFactory',
+        'acl'
     ],
 
     mixins: [

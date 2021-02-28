@@ -5,7 +5,7 @@ const { Criteria } = Shopware.Data;
 Shopware.Component.register('rl-advanced-banners-overview', {
     template,
 
-    inject: ['repositoryFactory'],
+    inject: ['repositoryFactory', 'acl'],
 
     data() {
         return {

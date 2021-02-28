@@ -7,10 +7,21 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Shopware\Core\Framework\Plugin;
+use Shopware\Core\Framework\Plugin\Context\ActivateContext;
+use Shopware\Core\Framework\Plugin\Context\DeactivateContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
 class RuneLaenenAdvancedBanners extends Plugin
 {
+    public function enrichPrivileges(): array
+    {
+        return [
+            'cms.viewer' => [
+                'rl_ab_banner:read',
+            ],
+        ];
+    }
+
     public function uninstall(UninstallContext $context): void
     {
         parent::uninstall($context);

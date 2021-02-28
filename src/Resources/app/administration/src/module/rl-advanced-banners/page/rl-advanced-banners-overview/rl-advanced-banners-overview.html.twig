@@ -39,6 +39,7 @@
                     <sw-button
                         class="rl-advanced-banners-overview__button-create"
                         @click="showCreateModal = true"
+                        v-if="acl.can('rl_ab_banner.creator')"
                         variant="primary"
                         v-tooltip="{
                             message: $tc('rl-advanced-banners.tooltip.warning'),
@@ -61,7 +62,10 @@
                         detailRoute="rl.advanced.banners.detail"
                         :repository="repository"
                         :columns="columns"
-                        :items="items">
+                        :items="items"
+                        :allowView="acl.can('rl_ab_banner.viewer')"
+                        :allowEdit="acl.can('rl_ab_banner.editor')"
+                        :allowDelete="acl.can('rl_ab_banner.deleter')">
                         {% block rl_advanced_banners_overview_content_list_created_at %}
                             <template #column-createdAt="{ item }">
                                 {{ item.createdAt|date({hour: '2-digit', minute: '2-digit'}) }}
@@ -72,6 +76,7 @@
                             <template #more-actions="{ item }">
                                 {% block rl_advanced_banners_overview_content_list_actions_duplicate %}
                                     <sw-context-menu-item @click="onDuplicate(item)"
+                                                          v-if="acl.can('rl_ab_banner.creator')"
                                                           class="sw-entity-listing__context-menu-edit-duplicate">
                                         {{ $tc('rl-advanced-banners.list.contextMenu.duplicate') }}
                                     </sw-context-menu-item>
@@ -90,7 +95,7 @@
                 {% endblock %}
 
                 {% block rl_advanced_banners_overview_content_modal_create %}
-                    <sw-modal v-if="showCreateModal"
+                    <sw-modal v-if="showCreateModal && acl.can('rl_ab_banner.creator')"
                               @modal-close="showCreateModal = false"
                               :isLoading="createModalLoading"
                               :title="$tc('rl-advanced-banners.list.createModalTitle')">
