@@ -43,7 +43,6 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
             let styles = this.defaultCssStyles(this.layer);
             styles += `background-image: url('${this.media.url}');`;
             styles += `background-position: ${this.config.mediaPositionX} ${this.config.mediaPositionY};`;
-            styles += `background-repeat: ${this.config.mediaRepeat};`;
 
             return styles;
         }

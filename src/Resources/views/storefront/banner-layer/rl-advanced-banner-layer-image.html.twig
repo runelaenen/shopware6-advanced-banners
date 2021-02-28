@@ -1,10 +1,11 @@
 {% block rl_advanced_banner_layer_image %}
 {% set mediaCollection = searchMedia([layer.config.mediaId], context.context) %}
 {% set media = mediaCollection.get(layer.config.mediaId) %}
-<div class="rl-advanced-banner-image"
-    style="{% block rl_advanced_banner_layer_image_styles%}background-image: url('{{ media.url }}');
-        background-size: {{ layer.config.mediaMode }};
-        background-repeat: {{ layer.config.mediaRepeat }};
-        background-position: {{ layer.config.mediaPositionX }} {{ layer.config.mediaPositionY }};{% endblock %}">
-</div>
+{% sw_thumbnails 'cms-block-background' with {
+    media: media,
+    attributes: {
+        class: "rl-advanced-banner-image rl-advanced-banner-image--media-mode--" ~ layer.config.mediaMode,
+        style: "object-position: "~ layer.config.mediaPositionX ~ " " ~ layer.config.mediaPositionY ~ ";"
+    }
+} %}
 {% endblock %}

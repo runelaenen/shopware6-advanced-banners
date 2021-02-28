@@ -91,8 +91,6 @@
                 "backgroundMediaModeAuto": "Auto",
                 "backgroundMediaModeCover": "Cover",
                 "backgroundMediaModeContain": "Contain",
-                "mediaRepeat": "Repeat",
-                "mediaNoRepeat": "No repeat",
                 "positionX": "Position X",
                 "positionY": "Position Y",
                 "width": "Width",

@@ -66,7 +66,6 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                     mediaMode: 'cover',
                     mediaPositionX: 'center',
                     mediaPositionY: 'center',
-                    mediaRepeat: 'no-repeat'
                 })
             });
         },

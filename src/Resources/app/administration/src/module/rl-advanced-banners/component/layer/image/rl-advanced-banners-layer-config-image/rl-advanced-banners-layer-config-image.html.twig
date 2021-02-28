@@ -28,14 +28,6 @@
                         <option value="cover">{{ $tc('rl-advanced-banners.layer.image.backgroundMediaModeCover') }}</option>
                     </sw-select-field>
                 </div>
-                <div>
-                    <sw-select-field :label="$tc('rl-advanced-banners.layer.image.mediaRepeat')"
-                                     v-model="config.mediaRepeat"
-                                     :disabled="!config.mediaId">
-                        <option value="no-repeat">{{ $tc('rl-advanced-banners.layer.image.mediaNoRepeat') }}</option>
-                        <option value="repeat">{{ $tc('rl-advanced-banners.layer.image.mediaRepeat') }}</option>
-                    </sw-select-field>
-                </div>
             </sw-container>
 
             <sw-container columns="1fr 1fr" gap="0px 30px">

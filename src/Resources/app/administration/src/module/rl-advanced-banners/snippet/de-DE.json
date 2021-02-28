@@ -89,8 +89,6 @@
                 "backgroundMediaModeAuto": "Standard",
                 "backgroundMediaModeCover": "Strecken",
                 "backgroundMediaModeContain": "Füllen",
-                "mediaRepeat": "Bild wiederholen",
-                "mediaNoRepeat": "Bild nicht wiederholen",
                 "positionX": "Horizontale Ausrichtung",
                 "positionY": "Vertikale Ausrichtung",
                 "width": "Breite",
