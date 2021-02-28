@@ -5,7 +5,11 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="RuneLaenen\AdvancedBanners\Custom\Banner\BannerEntityDefinition">
+        <service id="RuneLaenen\AdvancedBanners\Custom\Banner\AdvancedBannerDefinition">
+            <tag name="shopware.entity.definition" />
+        </service>
+
+        <service id="RuneLaenen\AdvancedBanners\Custom\Banner\Aggregate\AdvancedBannerTranslation\AdvancedBannerTranslationDefinition">
             <tag name="shopware.entity.definition" />
         </service>
 

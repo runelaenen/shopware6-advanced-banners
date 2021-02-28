@@ -2,7 +2,7 @@
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner\Cms;
 
-use RuneLaenen\AdvancedBanners\Custom\Banner\BannerEntityDefinition;
+use RuneLaenen\AdvancedBanners\Custom\Banner\AdvancedBannerDefinition;
 use Shopware\Core\Content\Cms\Aggregate\CmsSlot\CmsSlotEntity;
 use Shopware\Core\Content\Cms\DataResolver\CriteriaCollection;
 use Shopware\Core\Content\Cms\DataResolver\Element\AbstractCmsElementResolver;
@@ -29,7 +29,7 @@ class AdvancedBannerCmsElementResolver extends AbstractCmsElementResolver
         $criteria = new Criteria([$bannerConfig->getValue()]);
 
         $criteriaCollection = new CriteriaCollection();
-        $criteriaCollection->add('rl_advanced_banner_' . $slot->getUniqueIdentifier(), BannerEntityDefinition::class, $criteria);
+        $criteriaCollection->add('rl_advanced_banner_' . $slot->getUniqueIdentifier(), AdvancedBannerDefinition::class, $criteria);
 
         return $criteriaCollection;
     }

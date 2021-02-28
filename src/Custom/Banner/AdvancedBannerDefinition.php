@@ -2,15 +2,18 @@
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner;
 
+use RuneLaenen\AdvancedBanners\Custom\Banner\Aggregate\AdvancedBannerTranslation\AdvancedBannerTranslationDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\Required;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\JsonField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\TranslatedField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\TranslationsAssociationField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 
-class BannerEntityDefinition extends EntityDefinition
+class AdvancedBannerDefinition extends EntityDefinition
 {
     public const ENTITY_NAME = 'rl_ab_banner';
 
@@ -21,12 +24,12 @@ class BannerEntityDefinition extends EntityDefinition
 
     public function getCollectionClass(): string
     {
-        return BannerEntityCollection::class;
+        return AdvancedBannerCollection::class;
     }
 
     public function getEntityClass(): string
     {
-        return BannerEntity::class;
+        return AdvancedBanner::class;
     }
 
     protected function defineFields(): FieldCollection
@@ -34,7 +37,8 @@ class BannerEntityDefinition extends EntityDefinition
         return new FieldCollection([
             (new IdField('id', 'id'))->addFlags(new PrimaryKey(), new Required()),
             new StringField('technical_name', 'technicalName'),
-            new JsonField('data', 'data'),
+            new TranslatedField('data'),
+            (new TranslationsAssociationField(AdvancedBannerTranslationDefinition::class, 'rl_ab_banner_id'))->addFlags(new Required()),
         ]);
     }
 }

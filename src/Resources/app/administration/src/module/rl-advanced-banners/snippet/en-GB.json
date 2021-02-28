@@ -6,6 +6,8 @@
             "buttonCreateBanner": "Create",
             "technicalName": "Technical Name",
             "createdAt": "Created At",
+            "messageEmpty": "No Advanced Banners created yet",
+            "messageEmptySubline": "Create one to get started!",
             "createModalTitle": "Create Advanced Banner",
             "createBannerTitleLabel": "Advanced Banner Title",
             "contextMenu": {
@@ -125,6 +127,11 @@
                     "advancedBannerHeight": "Height"
                 }
             }
+        }
+    },
+    "global": {
+        "entities": {
+            "rl_ab_banner": "Advanced Banner"
         }
     }
 }
