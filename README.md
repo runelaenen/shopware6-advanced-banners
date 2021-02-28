@@ -9,9 +9,11 @@
 
 ![Advanced Banners (digital publishing) for Shopware 6](https://user-images.githubusercontent.com/3930922/93712896-ea9be300-fb58-11ea-94a5-e14f64b15448.png)
 
-Create layered, responsive banners & slideshows like you could do with _Shopware 5 Digital Publishing_.
+Create layered, responsive banners & slideshows like you could do with the _Shopware 5 Digital Publishing_ plugin.
 
-## Features
+Are you a happy user of the Advanced Banners plugin? Please consider giving our project a ⭐️ star on Github, or [buying the maintainer a cup of ☕️ coffee](https://www.buymeacoffee.com/runelaenen).
+
+## ✔️ Features
  - Banner editor
  - Layered banners
  - Different layers
@@ -23,18 +25,24 @@ Create layered, responsive banners & slideshows like you could do with _Shopware
    - English
    - German
    - Dutch
+ - Translatable content
+ - ACL
  - Easily extendible
- - 'Advanced Banner' CMS element
- - 'Advanced Banner Slider' CMS element
-
-## How to install
+ - CMS Elements
+    - Advanced Banner
+    - Advanced Banner Slider
+    
+## 🚀 How to install
 ### Composer install (recommended)
 ```
 composer require runelaenen/shopware6-advanced-banners
 bin/console plugin:refresh
 bin/console plugin:install --activate RuneLaenenAdvancedBanners
 ```
-Builing the javascript & css will still be needed.
+#### 🔨 Building
+The composer install does not come with compiled javascript. You will have to build/compile your administration and storefront javascript. 
+
+In case you are using the production template, the command below should do the trick.
 ```
 bin/build.sh
 ```
@@ -57,3 +65,11 @@ bin/build.sh
 1. Download the latest RuneLaenenAdvancedBanners.zip from the [latest release](https://github.com/runelaenen/shopware6-advanced-banners/releases/latest).
 2. Upload the zip in the Shopware Administration
 3. Update the plugin
+
+
+## 👷‍ Contribution
+Please help with code, love, shares, feedback and bug reporting.
+
+## ⚖️ Licence
+This plugin is licensed under the MIT licence.
+
