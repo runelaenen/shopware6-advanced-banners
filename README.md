@@ -10,6 +10,7 @@
 ![Advanced Banners (digital publishing) for Shopware 6](https://user-images.githubusercontent.com/3930922/93712896-ea9be300-fb58-11ea-94a5-e14f64b15448.png)
 
 Create layered, responsive banners & slideshows like you could do with the _Shopware 5 Digital Publishing_ plugin.
+The plugin is compatible with PHP version 7.4 and higher.
 
 Are you a happy user of the Advanced Banners plugin? Please consider giving our project a ⭐️ star on Github, or [buying the maintainer a cup of ☕️ coffee](https://www.buymeacoffee.com/runelaenen).
 

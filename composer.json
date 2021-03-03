@@ -3,11 +3,24 @@
     "description": "Advanced Banners (Digital Publishing) plugin",
     "type": "shopware-platform-plugin",
     "license": "MIT",
+    "version": "2.0.1",
     "autoload": {
         "psr-4": {
             "RuneLaenen\\AdvancedBanners\\": "src/"
         }
     },
+    "config": {
+        "platform": {
+            "php": "^7.4 || 8.0"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rune Laenen",
+            "email": "rune@laenen.me",
+            "homepage": "https://laenen.me"
+        }
+    ],
     "extra": {
         "shopware-plugin-class": "RuneLaenen\\AdvancedBanners\\RuneLaenenAdvancedBanners",
         "plugin-icon": "src/Resources/config/plugin.png",
