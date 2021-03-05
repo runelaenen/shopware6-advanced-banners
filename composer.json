@@ -9,10 +9,8 @@
             "RuneLaenen\\AdvancedBanners\\": "src/"
         }
     },
-    "config": {
-        "platform": {
-            "php": "^7.4 || 8.0"
-        }
+    "require": {
+        "php": "^7.4 || 8.0"
     },
     "authors": [
         {
