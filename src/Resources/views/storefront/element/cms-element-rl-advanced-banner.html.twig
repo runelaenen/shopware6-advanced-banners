@@ -1,10 +1,12 @@
 {% block rl_advanced_banner_element %}
-    <div class="rl-advanced-banner"
-         style="height: {{ element.config.height.value }};">
-        {% for layer in element.data.data.layers|sort((a, b) => a.position <=> b.position) %}
-            {% block rl_advanced_banner_element_layers %}
-                {% sw_include '@Storefront/storefront/banner-layer/rl-advanced-banner-layer.html.twig' %}
-            {% endblock %}
-        {% endfor %}
-    </div>
+    {% if element.data.translated.data %}
+        <div class="rl-advanced-banner"
+             style="height: {{ element.config.height.value }};">
+            {% for layer in element.data.translated.data.layers|sort((a, b) => a.position <=> b.position) %}
+                {% block rl_advanced_banner_element_layers %}
+                    {% sw_include '@Storefront/storefront/banner-layer/rl-advanced-banner-layer.html.twig' %}
+                {% endblock %}
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock %}

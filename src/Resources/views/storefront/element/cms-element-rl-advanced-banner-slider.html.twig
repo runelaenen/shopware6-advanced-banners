@@ -22,13 +22,15 @@
 
                         {% for slide in element.data %}
                             {% block element_rl_advanced_banner_slider_slide %}
-                                <div class="rl-advanced-banner image-slider-item" style="height: {{ element.config.height.value }};">
-                                    {% for layer in slide.data.layers|sort((a, b) => a.position <=> b.position) %}
-                                        {% block element_rl_advanced_banner_slider_slide_layer %}
-                                            {% sw_include '@Storefront/storefront/banner-layer/rl-advanced-banner-layer.html.twig' %}
-                                        {% endblock %}
-                                    {% endfor %}
-                                </div>
+                                {% if slide.translated.data %}
+                                    <div class="rl-advanced-banner image-slider-item" style="height: {{ element.config.height.value }};">
+                                        {% for layer in slide.translated.data.layers|sort((a, b) => a.position <=> b.position) %}
+                                            {% block element_rl_advanced_banner_slider_slide_layer %}
+                                                {% sw_include '@Storefront/storefront/banner-layer/rl-advanced-banner-layer.html.twig' %}
+                                            {% endblock %}
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
                             {% endblock %}
                         {% endfor %}
                     </div>
