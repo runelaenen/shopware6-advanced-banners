@@ -29,11 +29,11 @@
     .rl-advanced-banners-detail__back-btn {
         height: 70px;
         line-height: 70px;
-        border-right: 1px solid $color-steam-cloud;
-        color: $color-gutenberg;
+        border-right: 1px solid $color-gray-300;
+        color: $color-darkgray-200;
 
         &:hover {
-            color: $color-shopware-blue;
+            color: $color-shopware-brand-500;
         }
     }
 
