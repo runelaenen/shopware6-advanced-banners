@@ -7,7 +7,7 @@ on:
 jobs:
     CreateZip:
         runs-on: ubuntu-latest
-        container: ghcr.io/friendsofshopware/platform-plugin-dev:v6.3.1
+        container: ghcr.io/friendsofshopware/platform-plugin-dev:v6.3.5
         steps:
             -   name: Get the version
                 id: get_version
