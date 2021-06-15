@@ -9,8 +9,15 @@ class AdvancedBanner extends Entity
 {
     use EntityIdTrait;
 
-    protected string $technicalName;
-    protected array $data;
+    /**
+     * @var string
+     */
+    protected $technicalName;
+    
+    /**
+     * @var array
+     */
+    protected $data;
 
     public function getTechnicalName(): string
     {

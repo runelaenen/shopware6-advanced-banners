@@ -7,8 +7,15 @@ use Shopware\Core\Framework\DataAbstractionLayer\TranslationEntity;
 
 class AdvancedBannerTranslationEntity extends TranslationEntity
 {
-    protected string $rlAbBannerId;
-    protected array $data;
+    /**
+     * @var string
+     */
+    protected $rlAbBannerId;
+
+    /**
+     * @var array
+     */
+    protected $data;
     protected ?AdvancedBanner $rlAbBanner;
 
     public function getRlAbBannerId(): string
