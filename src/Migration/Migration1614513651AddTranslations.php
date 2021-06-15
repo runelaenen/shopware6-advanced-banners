@@ -15,7 +15,7 @@ class Migration1614513651AddTranslations extends MigrationStep
 
     public function update(Connection $connection): void
     {
-        $connection->executeUpdate(<<<SQL
+        $connection->executeStatement(<<<SQL
 CREATE TABLE `rl_ab_banner_translation` (
     `data` JSON NULL,
     `created_at` DATETIME(3) NOT NULL,
