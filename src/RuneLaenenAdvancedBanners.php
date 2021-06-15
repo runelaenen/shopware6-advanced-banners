@@ -33,9 +33,9 @@ class RuneLaenenAdvancedBanners extends Plugin
         // Drop tables
         /** @var Connection $connection */
         $connection = $this->container->get(Connection::class);
-        $connection->executeQuery('SET FOREIGN_KEY_CHECKS=0;');
-        $connection->executeQuery('DROP TABLE IF EXISTS `rl_ab_banner`');
-        $connection->executeQuery('DROP TABLE IF EXISTS `rl_ab_banner_translation`');
+        $connection->executeStatement('SET FOREIGN_KEY_CHECKS=0;');
+        $connection->executeStatement('DROP TABLE IF EXISTS `rl_ab_banner`');
+        $connection->executeStatement('DROP TABLE IF EXISTS `rl_ab_banner_translation`');
 
         // Remove CMS blocks & slots
         /** @var EntityRepositoryInterface $cmsBlockRepository */

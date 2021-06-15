@@ -1,8 +1,7 @@
-import Criteria from 'src/core/data-new/criteria.data';
 import template from './sw-cms-el-config-rl-advanced-banner.html.twig';
 
 const { Component, Mixin, Context } = Shopware;
-const { EntityCollection } = Shopware.Data;
+const { EntityCollection, Criteria } = Shopware.Data;
 
 Component.register('sw-cms-el-config-rl-advanced-banner-slider', {
     template,
