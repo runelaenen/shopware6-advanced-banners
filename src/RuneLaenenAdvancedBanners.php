@@ -7,8 +7,6 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Shopware\Core\Framework\Plugin;
-use Shopware\Core\Framework\Plugin\Context\ActivateContext;
-use Shopware\Core\Framework\Plugin\Context\DeactivateContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
 class RuneLaenenAdvancedBanners extends Plugin
@@ -33,9 +31,9 @@ class RuneLaenenAdvancedBanners extends Plugin
         // Drop tables
         /** @var Connection $connection */
         $connection = $this->container->get(Connection::class);
-        $connection->executeQuery('SET FOREIGN_KEY_CHECKS=0;');
-        $connection->executeQuery('DROP TABLE IF EXISTS `rl_ab_banner`');
-        $connection->executeQuery('DROP TABLE IF EXISTS `rl_ab_banner_translation`');
+        $connection->executeStatement('SET FOREIGN_KEY_CHECKS=0;');
+        $connection->executeStatement('DROP TABLE IF EXISTS `rl_ab_banner`');
+        $connection->executeStatement('DROP TABLE IF EXISTS `rl_ab_banner_translation`');
 
         // Remove CMS blocks & slots
         /** @var EntityRepositoryInterface $cmsBlockRepository */
@@ -66,6 +64,6 @@ class RuneLaenenAdvancedBanners extends Plugin
             $context->getContext()
         );
 
-        $connection->executeQuery('SET FOREIGN_KEY_CHECKS=1;');
+        $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }
