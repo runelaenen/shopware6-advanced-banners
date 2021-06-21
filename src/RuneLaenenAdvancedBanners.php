@@ -7,8 +7,6 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsAnyFilter;
 use Shopware\Core\Framework\Plugin;
-use Shopware\Core\Framework\Plugin\Context\ActivateContext;
-use Shopware\Core\Framework\Plugin\Context\DeactivateContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 
 class RuneLaenenAdvancedBanners extends Plugin
@@ -66,6 +64,6 @@ class RuneLaenenAdvancedBanners extends Plugin
             $context->getContext()
         );
 
-        $connection->executeQuery('SET FOREIGN_KEY_CHECKS=1;');
+        $connection->executeStatement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

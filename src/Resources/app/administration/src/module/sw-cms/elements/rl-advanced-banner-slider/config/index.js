@@ -39,7 +39,7 @@ Component.register('sw-cms-el-config-rl-advanced-banner-slider', {
                 Context.api
             );
 
-            const criteria = new Criteria(1, 1000);
+            const criteria = new Criteria(1, 100);
             criteria.setIds(this.element.config.advancedBanners.value);
 
             this.bannerRepository
