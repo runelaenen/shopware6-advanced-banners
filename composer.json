@@ -3,7 +3,7 @@
     "description": "Advanced Banners (Digital Publishing) plugin",
     "type": "shopware-platform-plugin",
     "license": "MIT",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "autoload": {
         "psr-4": {
             "RuneLaenen\\AdvancedBanners\\": "src/"

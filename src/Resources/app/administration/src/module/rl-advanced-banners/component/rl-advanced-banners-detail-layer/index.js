@@ -17,12 +17,6 @@ Component.register('rl-advanced-banners-detail-layer', {
         }
     },
 
-    data() {
-        return {
-            showLayerConfig: false
-        };
-    },
-
     created() {
         if (Array.isArray(this.layer.config)) {
             this.$set(this.layer, 'config', {});
@@ -41,11 +35,7 @@ Component.register('rl-advanced-banners-detail-layer', {
         },
 
         onLayerConfig() {
-            this.showLayerConfig = true;
+            this.$emit('config-layer', this.layer);
         },
-
-        onConfigModalClose() {
-            this.showLayerConfig = false;
-        }
     }
 });

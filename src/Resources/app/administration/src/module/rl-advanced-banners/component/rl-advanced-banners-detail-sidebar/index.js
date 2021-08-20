@@ -44,17 +44,23 @@ Component.register('rl-advanced-banners-detail-sidebar', {
         }
     },
 
+    data() {
+        return {
+            layerConfigLayer: null
+        };
+    },
+
     methods: {
         addTextLayer() {
             this.advancedBanner.data.layers.push({
                 id: utils.createId(),
                 type: 'text',
                 position: this.newMaxPosition,
-                config: Object.assign(this.defaultConfig, {
+                config: {...this.defaultConfig, ...{
                     content: 'Placeholder text',
                     textAlignX: 'left',
                     textAlignY: 'top'
-                })
+                }}
             });
         },
         addImageLayer() {
@@ -62,11 +68,11 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'image',
                 position: this.newMaxPosition,
-                config: Object.assign(this.defaultConfig, {
+                config: {...this.defaultConfig, ...{
                     mediaMode: 'cover',
                     mediaPositionX: 'center',
                     mediaPositionY: 'center',
-                })
+                }}
             });
         },
         addButtonLayer() {
@@ -74,14 +80,14 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'button',
                 position: this.newMaxPosition,
-                config: Object.assign(this.defaultConfig, {
+                config: {...this.defaultConfig, ...{
                     buttonVariant: 'primary',
                     content: 'Click me!',
                     buttonLink: '',
                     buttonTarget: '_self',
                     buttonAlignX: 'left',
                     buttonAlignY: 'top'
-                })
+                }}
             });
         },
         addSolidLayer() {
@@ -89,11 +95,20 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'solid',
                 position: this.newMaxPosition,
-                config: Object.assign(this.defaultConfig, {
+                config: {...this.defaultConfig, ...{
                     color: '#189eff'
-                })
+                }}
             });
         },
+
+        onLayerConfig(layer) {
+            this.layerConfigLayer = layer;
+        },
+
+        onConfigModalClose() {
+            this.layerConfigLayer = null;
+        },
+
         onLayerRemove(layer) {
             const data = this.advancedBanner.data.layers;
 

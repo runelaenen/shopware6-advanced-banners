@@ -23,25 +23,5 @@
                 <sw-icon name="default-action-trash" size="16"></sw-icon>
             </div>
         </div>
-        <sw-modal ref="configModal"
-                  v-if="showLayerConfig"
-                  class="rl-advanced-banners-detail-layer__modal"
-                  @modal-close="onConfigModalClose">
-            <template #modal-header>
-                <h4 class="sw-modal__title" id="modalTitleEl">
-                    {{ $tc('rl-advanced-banners.layer.modalTitle.' + layer.type) }}
-                </h4>
-
-                <sw-button :title="$tc('global.sw-modal.labelClose')"
-                           size="small"
-                           variant="primary"
-                           :aria-label="$tc('global.sw-modal.labelClose')"
-                           @click.prevent="$refs.configModal.closeModal">
-                    {{ $tc('rl-advanced-banners.layer.modalDoneButton') }}
-                </sw-button>
-            </template>
-
-            <component :is="'rl-advanced-banners-layer-config-' + layer.type" :layer="layer"></component>
-        </sw-modal>
     </div>
 {% endblock %}
