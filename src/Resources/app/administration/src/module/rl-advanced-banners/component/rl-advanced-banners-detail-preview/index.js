@@ -27,5 +27,14 @@ Component.register('rl-advanced-banners-detail-preview', {
             required: false,
             default: false
         }
+    },
+
+    computed: {
+        layers() {
+            if (this.advancedBanner.data && this.advancedBanner.data.layers) {
+                return this.advancedBanner.data.layers;
+            }
+            return this.advancedBanner.translated.data.layers;
+        }
     }
 });
