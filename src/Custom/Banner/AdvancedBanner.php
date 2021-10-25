@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner;
 
@@ -13,7 +15,7 @@ class AdvancedBanner extends Entity
      * @var string
      */
     protected $technicalName;
-    
+
     /**
      * @var array
      */

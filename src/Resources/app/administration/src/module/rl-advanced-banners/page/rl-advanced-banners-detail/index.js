@@ -9,42 +9,37 @@ Component.register('rl-advanced-banners-detail', {
 
     inject: [
         'repositoryFactory',
-        'acl'
+        'acl',
     ],
 
     mixins: [
         Mixin.getByName('notification'),
-        Mixin.getByName('placeholder')
+        Mixin.getByName('placeholder'),
     ],
 
     shortcuts: {
         'SYSTEMKEY+S': 'onSave',
-        ESCAPE: 'onCancel'
+        ESCAPE: 'onCancel',
     },
 
     props: {
         advancedBannerId: {
-            type: String
-        }
-    },
-
-    watch: {
-        advancedBannerId() {
-            this.loadEntityData();
-        }
+            type: String,
+            required: true,
+        },
     },
 
     data() {
         return {
             advancedBanner: null,
             isLoading: false,
-            isSaveSuccessful: false
+            isSaveSuccessful: false,
         };
     },
 
     metaInfo() {
         return {
-            title: this.$createTitle(this.identifier)
+            title: this.$createTitle(this.identifier),
         };
     },
 
@@ -62,14 +57,14 @@ Component.register('rl-advanced-banners-detail', {
 
             return {
                 message: `${systemKey} + S`,
-                appearance: 'light'
+                appearance: 'light',
             };
         },
 
         tooltipCancel() {
             return {
                 message: 'ESC',
-                appearance: 'light'
+                appearance: 'light',
             };
         },
 
@@ -78,7 +73,13 @@ Component.register('rl-advanced-banners-detail', {
             criteria.setTerm(this.term);
 
             return criteria;
-        }
+        },
+    },
+
+    watch: {
+        advancedBannerId() {
+            this.loadEntityData();
+        },
     },
 
     created() {
@@ -136,7 +137,7 @@ Component.register('rl-advanced-banners-detail', {
             }).catch((exception) => {
                 this.createNotificationError({
                     title: this.$tc('global.default.error'),
-                    message: this.$tc('rl-advanced-banners.detail.messageSaveError')
+                    message: this.$tc('rl-advanced-banners.detail.messageSaveError'),
                 });
                 this.isLoading = false;
                 throw exception;
@@ -145,6 +146,6 @@ Component.register('rl-advanced-banners-detail', {
 
         onCancel() {
             this.$router.push({ name: 'rl.advanced.banners.overview' });
-        }
-    }
+        },
+    },
 });

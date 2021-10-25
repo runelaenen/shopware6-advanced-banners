@@ -10,11 +10,13 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner-slider', {
     inject: ['repositoryFactory'],
 
     mixins: [
-        Mixin.getByName('cms-element')
+        Mixin.getByName('cms-element'),
     ],
 
-    created() {
-        this.createdComponent();
+    data() {
+        return {
+            activateBannerItem: 0,
+        };
     },
 
     computed: {
@@ -40,13 +42,11 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner-slider', {
             }
 
             return this.advancedBanners[this.activateBannerItem];
-        }
+        },
     },
 
-    data() {
-        return {
-            activateBannerItem: 0
-        };
+    created() {
+        this.createdComponent();
     },
 
     methods: {
@@ -65,6 +65,6 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner-slider', {
                 .then((result) => {
                     this.$set(this.element.data, 'advancedBanners', result);
                 });
-        }
-    }
+        },
+    },
 });

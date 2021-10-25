@@ -8,14 +8,20 @@ Component.register('rl-advanced-banners-detail-sidebar', {
     template,
 
     mixins: [
-        Mixin.getByName('placeholder')
+        Mixin.getByName('placeholder'),
     ],
 
     props: {
         advancedBanner: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
+    },
+
+    data() {
+        return {
+            layerConfigLayer: null,
+        };
     },
 
     computed: {
@@ -39,15 +45,9 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 padRight: '0px',
                 padBottom: '0px',
                 padLeft: '0px',
-                cssClass: ''
+                cssClass: '',
             };
-        }
-    },
-
-    data() {
-        return {
-            layerConfigLayer: null
-        };
+        },
     },
 
     methods: {
@@ -56,11 +56,12 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'text',
                 position: this.newMaxPosition,
-                config: {...this.defaultConfig, ...{
-                    content: 'Placeholder text',
-                    textAlignX: 'left',
-                    textAlignY: 'top'
-                }}
+                config: { ...this.defaultConfig,
+                    ...{
+                        content: 'Placeholder text',
+                        textAlignX: 'left',
+                        textAlignY: 'top',
+                    } },
             });
         },
         addImageLayer() {
@@ -68,11 +69,12 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'image',
                 position: this.newMaxPosition,
-                config: {...this.defaultConfig, ...{
-                    mediaMode: 'cover',
-                    mediaPositionX: 'center',
-                    mediaPositionY: 'center',
-                }}
+                config: { ...this.defaultConfig,
+                    ...{
+                        mediaMode: 'cover',
+                        mediaPositionX: 'center',
+                        mediaPositionY: 'center',
+                    } },
             });
         },
         addButtonLayer() {
@@ -80,14 +82,15 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'button',
                 position: this.newMaxPosition,
-                config: {...this.defaultConfig, ...{
-                    buttonVariant: 'primary',
-                    content: 'Click me!',
-                    buttonLink: '',
-                    buttonTarget: '_self',
-                    buttonAlignX: 'left',
-                    buttonAlignY: 'top'
-                }}
+                config: { ...this.defaultConfig,
+                    ...{
+                        buttonVariant: 'primary',
+                        content: 'Click me!',
+                        buttonLink: '',
+                        buttonTarget: '_self',
+                        buttonAlignX: 'left',
+                        buttonAlignY: 'top',
+                    } },
             });
         },
         addSolidLayer() {
@@ -95,9 +98,10 @@ Component.register('rl-advanced-banners-detail-sidebar', {
                 id: utils.createId(),
                 type: 'solid',
                 position: this.newMaxPosition,
-                config: {...this.defaultConfig, ...{
-                    color: '#189eff'
-                }}
+                config: { ...this.defaultConfig,
+                    ...{
+                        color: '#189eff',
+                    } },
             });
         },
 
@@ -148,7 +152,7 @@ Component.register('rl-advanced-banners-detail-sidebar', {
             const orderedItems = [
                 ...remainingItems.slice(0, newIndex),
                 movedItem,
-                ...remainingItems.slice(newIndex)
+                ...remainingItems.slice(newIndex),
             ];
 
             this.advancedBanner.data.layers.splice(0, this.advancedBanner.data.layers.length, ...orderedItems);
@@ -160,6 +164,6 @@ Component.register('rl-advanced-banners-detail-sidebar', {
             this.advancedBanner.data.layers.forEach((layer, index) => {
                 layer.position = index;
             });
-        }
-    }
+        },
+    },
 });

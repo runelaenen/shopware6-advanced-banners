@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner\Aggregate\AdvancedBannerTranslation;
 
@@ -16,6 +18,7 @@ class AdvancedBannerTranslationEntity extends TranslationEntity
      * @var array
      */
     protected $data;
+
     protected ?AdvancedBanner $rlAbBanner;
 
     public function getRlAbBannerId(): string

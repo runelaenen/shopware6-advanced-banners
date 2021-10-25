@@ -15,12 +15,12 @@ Shopware.Service('cmsService').registerCmsElement({
             required: true,
             entity: {
                 name: 'product',
-                criteria: new Shopware.Data.Criteria()
-            }
+                criteria: new Shopware.Data.Criteria(),
+            },
         },
         height: {
             source: 'static',
-            value: '340px'
-        }
-    }
+            value: '340px',
+        },
+    },
 });

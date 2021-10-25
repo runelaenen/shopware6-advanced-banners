@@ -9,17 +9,17 @@ Component.register('sw-cms-el-config-rl-advanced-banner', {
     inject: ['repositoryFactory'],
 
     mixins: [
-        Mixin.getByName('cms-element')
+        Mixin.getByName('cms-element'),
     ],
-
-    created() {
-        this.createdComponent();
-    },
 
     computed: {
         bannerRepository() {
             return this.repositoryFactory.create('rl_ab_banner');
-        }
+        },
+    },
+
+    created() {
+        this.createdComponent();
     },
 
     methods: {
@@ -42,6 +42,6 @@ Component.register('sw-cms-el-config-rl-advanced-banner', {
             }
 
             this.$emit('element-update', this.element);
-        }
-    }
+        },
+    },
 });

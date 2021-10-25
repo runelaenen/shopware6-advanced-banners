@@ -9,23 +9,23 @@ Component.register('sw-cms-el-config-rl-advanced-banner-slider', {
     inject: ['repositoryFactory'],
 
     mixins: [
-        Mixin.getByName('cms-element')
+        Mixin.getByName('cms-element'),
     ],
 
-    created() {
-        this.createdComponent();
+    data() {
+        return {
+            advancedBanners: null,
+        };
     },
 
     computed: {
         bannerRepository() {
             return this.repositoryFactory.create('rl_ab_banner');
-        }
+        },
     },
 
-    data() {
-        return {
-            advancedBanners: null
-        };
+    created() {
+        this.createdComponent();
     },
 
     methods: {
@@ -36,7 +36,7 @@ Component.register('sw-cms-el-config-rl-advanced-banner-slider', {
             this.advancedBanners = new EntityCollection(
                 this.bannerRepository.route,
                 this.bannerRepository.entityName,
-                Context.api
+                Context.api,
             );
 
             const criteria = new Criteria(1, 1000);
@@ -55,6 +55,6 @@ Component.register('sw-cms-el-config-rl-advanced-banner-slider', {
             this.$set(this.element.data, 'advancedBanners', newCollection);
 
             this.$emit('element-update', this.element);
-        }
-    }
+        },
+    },
 });
