@@ -5,6 +5,7 @@
         {% sw_thumbnails 'cms-block-background' with {
             media: media,
             attributes: {
+                alt: ( media.translated.alt ?: ''),
                 class: "rl-advanced-banner-image rl-advanced-banner-image--media-mode--" ~ layer.config.mediaMode,
                 style: "object-position: "~ layer.config.mediaPositionX ~ " " ~ layer.config.mediaPositionY ~ ";"
             }
