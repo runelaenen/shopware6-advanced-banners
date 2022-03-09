@@ -1,5 +1,5 @@
 export default function defaultCssStyles(layer) {
-    let styles = '';
+    let styles = 'position: relative;';
     styles += `height: ${layer.config.height};`;
     styles += `width: ${layer.config.width};`;
     styles += `top: ${layer.config.posTop};`;
