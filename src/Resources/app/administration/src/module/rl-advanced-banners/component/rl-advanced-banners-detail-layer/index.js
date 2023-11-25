@@ -7,25 +7,25 @@ Component.register('rl-advanced-banners-detail-layer', {
     template,
 
     mixins: [
-        Mixin.getByName('placeholder')
+        Mixin.getByName('placeholder'),
     ],
 
     props: {
         layer: {
             type: Object,
-            required: true
-        }
-    },
-
-    created() {
-        if (Array.isArray(this.layer.config)) {
-            this.$set(this.layer, 'config', {});
-        }
+            required: true,
+        },
     },
 
     computed: {
         configExists() {
             return (`rl-advanced-banners-layer-config-${this.layer.type}`) in this.$options.components;
+        },
+    },
+
+    created() {
+        if (Array.isArray(this.layer.config)) {
+            this.$set(this.layer, 'config', {});
         }
     },
 
@@ -37,5 +37,5 @@ Component.register('rl-advanced-banners-detail-layer', {
         onLayerConfig() {
             this.$emit('config-layer', this.layer);
         },
-    }
+    },
 });

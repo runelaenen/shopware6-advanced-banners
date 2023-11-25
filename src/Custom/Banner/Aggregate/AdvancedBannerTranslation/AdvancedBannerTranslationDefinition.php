@@ -1,8 +1,9 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner\Aggregate\AdvancedBannerTranslation;
 
-use RuneLaenen\AdvancedBanners\Custom\Banner\AdvancedBanner;
 use RuneLaenen\AdvancedBanners\Custom\Banner\AdvancedBannerDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityTranslationDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\JsonField;

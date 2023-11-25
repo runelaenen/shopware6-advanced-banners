@@ -7,18 +7,18 @@ Component.register('rl-advanced-banners-detail-preview-layer-solid', {
     template,
 
     inject: [
-        'defaultCssStyles'
+        'defaultCssStyles',
     ],
 
     mixins: [
-        Mixin.getByName('placeholder')
+        Mixin.getByName('placeholder'),
     ],
 
     props: {
         layer: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
     },
 
     computed: {
@@ -31,6 +31,6 @@ Component.register('rl-advanced-banners-detail-preview-layer-solid', {
             styles += `background-color: ${this.layer.config.color}`;
 
             return styles;
-        }
-    }
+        },
+    },
 });

@@ -7,19 +7,19 @@ Component.register('rl-advanced-banners-layer-config-text', {
     template,
 
     inject: [
-        'repositoryFactory'
+        'repositoryFactory',
     ],
 
     props: {
         layer: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
     },
 
     data() {
         return {
-            isLoading: false
+            isLoading: false,
         };
     },
 

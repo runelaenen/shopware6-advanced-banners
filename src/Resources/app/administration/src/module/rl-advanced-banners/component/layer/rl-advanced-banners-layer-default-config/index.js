@@ -9,13 +9,13 @@ Component.register('rl-advanced-banners-layer-default-config', {
     props: {
         layer: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
     },
 
     computed: {
         config() {
             return this.layer.config || {};
-        }
-    }
+        },
+    },
 });

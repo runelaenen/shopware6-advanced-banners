@@ -7,14 +7,14 @@ Component.register('rl-advanced-banners-layer-config-button', {
     template,
 
     inject: [
-        'repositoryFactory'
+        'repositoryFactory',
     ],
 
     props: {
         layer: {
             type: Object,
-            required: true
-        }
+            required: true,
+        },
     },
 
     data() {
@@ -23,39 +23,39 @@ Component.register('rl-advanced-banners-layer-config-button', {
             buttonVariantList: [
                 {
                     id: 'primary',
-                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantPrimary')
+                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantPrimary'),
                 },
                 {
                     id: 'secondary',
-                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantSecondary')
+                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantSecondary'),
                 },
                 {
                     id: 'primary-sm',
-                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantPrimarySmall')
+                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantPrimarySmall'),
                 },
                 {
                     id: 'secondary-sm',
-                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantSecondarySmall')
-                }
+                    name: this.$tc('sw-text-editor-toolbar.link.buttonVariantSecondarySmall'),
+                },
             ],
             buttonTargetList: [
                 {
                     id: '_self',
-                    name: this.$tc('rl-advanced-banners.layer.button.buttonTargetList.self')
+                    name: this.$tc('rl-advanced-banners.layer.button.buttonTargetList.self'),
                 },
                 {
                     id: '_blank',
-                    name: this.$tc('rl-advanced-banners.layer.button.buttonTargetList.blank')
-                }
-            ]
+                    name: this.$tc('rl-advanced-banners.layer.button.buttonTargetList.blank'),
+                },
+            ],
         };
     },
 
     computed: {
         config() {
             return this.layer.config || {};
-        }
+        },
     },
 
-    methods: {}
+    methods: {},
 });

@@ -8,17 +8,24 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
 
     inject: [
         'repositoryFactory',
-        'defaultCssStyles'
+        'defaultCssStyles',
     ],
 
     mixins: [
-        Mixin.getByName('placeholder')
+        Mixin.getByName('placeholder'),
     ],
+
+    props: {
+        layer: {
+            type: Object,
+            required: true,
+        },
+    },
 
     data() {
         return {
             media: null,
-            isLoading: false
+            isLoading: false,
         };
     },
 
@@ -45,7 +52,7 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
             styles += `background-position: ${this.config.mediaPositionX} ${this.config.mediaPositionY};`;
 
             return styles;
-        }
+        },
     },
 
     watch: {
@@ -54,8 +61,8 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
                 this.loadMedia();
             },
             immediate: true,
-            deep: true
-        }
+            deep: true,
+        },
     },
 
 
@@ -73,13 +80,6 @@ Component.register('rl-advanced-banners-detail-preview-layer-image', {
                 this.media = mediaItem;
                 this.isLoading = false;
             });
-        }
+        },
     },
-
-    props: {
-        layer: {
-            type: Object,
-            required: true
-        }
-    }
 });

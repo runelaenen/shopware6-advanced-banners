@@ -16,13 +16,13 @@ Shopware.Component.register('rl-advanced-banners-overview', {
             term: this.$route.query ? this.$route.query.term : null,
             showCreateModal: false,
             createModalLoading: false,
-            createBannerTitle: ''
+            createBannerTitle: '',
         };
     },
 
     metaInfo() {
         return {
-            title: this.$createTitle()
+            title: this.$createTitle(),
         };
     },
 
@@ -33,15 +33,15 @@ Shopware.Component.register('rl-advanced-banners-overview', {
                     property: 'technicalName',
                     dataIndex: 'technicalName',
                     label: 'rl-advanced-banners.list.technicalName',
-                    routerLink: 'rl.advanced.banners.detail'
+                    routerLink: 'rl.advanced.banners.detail',
                 }, {
                     property: 'createdAt',
                     dataIndex: 'createdAt',
                     label: 'rl-advanced-banners.list.createdAt',
-                    routerLink: 'rl.advanced.banners.detail'
-                }
+                    routerLink: 'rl.advanced.banners.detail',
+                },
             ];
-        }
+        },
     },
 
     created() {
@@ -102,8 +102,8 @@ Shopware.Component.register('rl-advanced-banners-overview', {
                                 this.$router.push({
                                     name: 'rl.advanced.banners.detail',
                                     params: {
-                                        id: banner.id
-                                    }
+                                        id: banner.id,
+                                    },
                                 });
                             });
                         });
@@ -129,11 +129,11 @@ Shopware.Component.register('rl-advanced-banners-overview', {
                     this.$router.push({
                         name: 'rl.advanced.banners.detail',
                         params: {
-                            id: banner.id
-                        }
+                            id: banner.id,
+                        },
                     });
                 });
             });
-        }
-    }
+        },
+    },
 });

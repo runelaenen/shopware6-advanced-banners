@@ -1,12 +1,14 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace RuneLaenen\AdvancedBanners\Custom\Banner\Aggregate\AdvancedBannerTranslation;
 
 use Shopware\Core\Framework\DataAbstractionLayer\EntityCollection;
 
 /**
- * @method void                         add(AdvancedBannerTranslationEntity $entity)
- * @method void                         set(string $key, AdvancedBannerTranslationEntity $entity)
+ * @method void                                 add(AdvancedBannerTranslationEntity $entity)
+ * @method void                                 set(string $key, AdvancedBannerTranslationEntity $entity)
  * @method AdvancedBannerTranslationEntity[]    getIterator()
  * @method AdvancedBannerTranslationEntity[]    getElements()
  * @method AdvancedBannerTranslationEntity|null get(string $key)

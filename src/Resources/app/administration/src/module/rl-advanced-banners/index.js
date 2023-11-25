@@ -1,4 +1,4 @@
-import './acl'
+import './acl';
 
 import './component/rl-advanced-banners-detail-sidebar';
 import './component/rl-advanced-banners-detail-layer';
@@ -33,8 +33,8 @@ Shopware.Module.register('rl-advanced-banners', {
             component: 'rl-advanced-banners-overview',
             path: 'overview',
             meta: {
-                privilege: 'rl_ab_banner.viewer'
-            }
+                privilege: 'rl_ab_banner.viewer',
+            },
         },
         detail: {
             component: 'rl-advanced-banners-detail',
@@ -42,14 +42,14 @@ Shopware.Module.register('rl-advanced-banners', {
             props: {
                 default: (route) => {
                     return {
-                        advancedBannerId: route.params.id
+                        advancedBannerId: route.params.id,
                     };
-                }
+                },
             },
             meta: {
-                privilege: 'rl_ab_banner.viewer'
-            }
-        }
+                privilege: 'rl_ab_banner.viewer',
+            },
+        },
     },
 
     navigation: [{
@@ -58,6 +58,6 @@ Shopware.Module.register('rl-advanced-banners', {
         path: 'rl.advanced.banners.overview',
         icon: 'default-object-puzzle-piece',
         parent: 'sw-content',
-        privilege: 'rl_ab_banner.viewer'
-    }]
+        privilege: 'rl_ab_banner.viewer',
+    }],
 });

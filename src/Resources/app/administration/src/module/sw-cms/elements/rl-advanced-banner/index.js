@@ -14,12 +14,12 @@ Shopware.Service('cmsService').registerCmsElement({
             value: null,
             required: true,
             entity: {
-                name: 'rl_ab_banner'
-            }
+                name: 'rl_ab_banner',
+            },
         },
         height: {
             source: 'static',
-            value: '340px'
-        }
-    }
+            value: '340px',
+        },
+    },
 });

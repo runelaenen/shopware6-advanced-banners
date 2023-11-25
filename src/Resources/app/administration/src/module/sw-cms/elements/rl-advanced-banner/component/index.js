@@ -7,12 +7,8 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner', {
     template,
 
     mixins: [
-        Mixin.getByName('cms-element')
+        Mixin.getByName('cms-element'),
     ],
-
-    created() {
-        this.createdComponent();
-    },
 
     computed: {
         advancedBanner() {
@@ -21,13 +17,17 @@ Shopware.Component.register('sw-cms-el-rl-advanced-banner', {
 
         previewStyle() {
             return `height: ${this.element.config.height.value};`;
-        }
+        },
+    },
+
+    created() {
+        this.createdComponent();
     },
 
     methods: {
         createdComponent() {
             this.initElementConfig('rl-advanced-banner');
             this.initElementData('rl-advanced-banner');
-        }
-    }
+        },
+    },
 });

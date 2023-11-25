@@ -5,9 +5,9 @@ Shopware.Service('privileges').addPrivilegeMappingEntry({
     roles: {
         viewer: {
             privileges: [
-                'rl_ab_banner:read'
+                'rl_ab_banner:read',
             ],
-            dependencies: []
+            dependencies: [],
         },
         editor: {
             privileges: [
@@ -15,8 +15,8 @@ Shopware.Service('privileges').addPrivilegeMappingEntry({
                 'rl_ab_banner:update',
             ],
             dependencies: [
-                'rl_ab_banner:viewer'
-            ]
+                'rl_ab_banner:viewer',
+            ],
         },
         creator: {
             privileges: [
@@ -24,16 +24,16 @@ Shopware.Service('privileges').addPrivilegeMappingEntry({
             ],
             dependencies: [
                 'rl_ab_banner:viewer',
-                'rl_ab_banner:editor'
-            ]
+                'rl_ab_banner:editor',
+            ],
         },
         deleter: {
             privileges: [
                 'rl_ab_banner:delete',
             ],
             dependencies: [
-                'rl_ab_banner:viewer'
-            ]
-        }
-    }
+                'rl_ab_banner:viewer',
+            ],
+        },
+    },
 });

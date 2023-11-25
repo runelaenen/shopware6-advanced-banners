@@ -8,25 +8,25 @@ const { Component, Mixin } = Shopware;
 Component.register('rl-advanced-banners-detail-preview', {
     template,
 
-    mixins: [
-        Mixin.getByName('placeholder')
-    ],
-
     provide: {
-        defaultCssStyles
+        defaultCssStyles,
     },
+
+    mixins: [
+        Mixin.getByName('placeholder'),
+    ],
 
     props: {
         advancedBanner: {
             type: Object,
-            required: true
+            required: true,
         },
 
         isCmsPreview: {
             type: Boolean,
             required: false,
-            default: false
-        }
+            default: false,
+        },
     },
 
     computed: {
@@ -35,6 +35,6 @@ Component.register('rl-advanced-banners-detail-preview', {
                 return this.advancedBanner.data.layers;
             }
             return this.advancedBanner.translated.data.layers;
-        }
-    }
+        },
+    },
 });
